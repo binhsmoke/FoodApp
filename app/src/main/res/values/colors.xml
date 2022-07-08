@@ -8,5 +8,13 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="pink">#e0c5d8</color>
-    <color name="bluesky">#8cbbc3</color>
+
+    <color name="mint">#04BFAD</color>
+    <color name="lightcyan">#73D9D9</color>
+    <color name="cyan">#68CDD0</color>
+    <color name="green">#025951</color>
+    <color name="orange">#F25C05</color>
+    <color name="antiflash">#f6f7fb</color>
+    <color name="silver">#c1c7d0</color>
+
 </resources>

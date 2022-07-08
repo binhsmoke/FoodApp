@@ -1,342 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Activity.MainActivity">
-
-    <ScrollView
-        android:id="@+id/scrollView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingBottom="90dp">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
+            android:orientation="horizontal"
+           android:layout_marginBottom="10dp">
+            <TextView
+                android:id="@+id/tvLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nhà"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:drawableLeft="@drawable/ic_location"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" >"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="32dp"
-                    android:layout_marginTop="32dp"
-                    android:text="Username"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="6dp"
-                    android:text="Points"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    app:layout_constraintStart_toStartOf="@+id/textView2"
-                    app:layout_constraintTop_toBottomOf="@+id/textView2" />
-
+                android:layout_height="match_parent"
+                >
                 <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="60dp"
-                    android:layout_height="50dp"
-                    android:layout_marginEnd="32dp"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView3"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/textView2"
-                    app:srcCompat="@drawable/ic_baseline_person_24" />
-
-                <EditText
-                    android:id="@+id/editTextTextPersonName2"
-                    android:layout_width="0dp"
-                    android:layout_height="35dp"
-                    android:layout_marginStart="32dp"
-                    android:layout_marginTop="14dp"
-                    android:layout_marginEnd="32dp"
-                    android:background="@drawable/search_bg"
-                    android:drawableStart="@drawable/ic_baseline_search_24"
-                    android:drawablePadding="20dp"
-                    android:ems="20"
-                    android:hint="Find Food"
-                    android:inputType="textPersonName"
-                    android:paddingStart="10sp"
-                    android:textSize="16sp"
-                    android:textStyle="italic"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/constraintLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:layout_marginStart="32dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginEnd="32dp"
-                    android:background="@drawable/ads_bg"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/editTextTextPersonName2">
-
-                    <ImageView
-                        android:id="@+id/imageView4"
-                        android:layout_width="100dp"
-                        android:layout_height="70dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/bann" />
-
-                    <TextView
-                        android:id="@+id/textView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginEnd="24dp"
-                        android:text="EVENT SALE 20%"
-                        android:textAlignment="center"
-                        android:textColor="#ffffff"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/imageView4"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/textView4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="START - END"
-                        android:textAlignment="center"
-                        android:textColor="#ffffff"
-                        android:textSize="14sp"
-                        app:layout_constraintEnd_toEndOf="@+id/textView"
-                        app:layout_constraintStart_toStartOf="@+id/textView"
-                        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <TextView
-                    android:id="@+id/textView7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="32dp"
-                    android:layout_marginTop="16dp"
-                    android:text="Restaurants"
-                    android:textColor="#000000"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvRestaurant"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:clipToPadding="false"
-                    android:paddingHorizontal="22dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView7" />
-
-                <TextView
-                    android:id="@+id/textView9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="32dp"
-                    android:layout_marginTop="16dp"
-                    android:text="Foods"
-                    android:textColor="#000000"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/rvRestaurant" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rvFood"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:paddingHorizontal="22dp"
-                    android:clipToPadding="false"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/textView9" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/ic_menu"
+                    android:id="@+id/icMenu"
+                    />
+            </RelativeLayout>
         </LinearLayout>
-    </ScrollView>
+        <TextView
+            android:id="@+id/swUserSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_searchtool"
+            app:searchIcon="@null"
+            android:padding="5dp"
+            android:text="Tìm món ăn"
+            android:gravity="center"
+            android:drawableLeft="@drawable/ic_search"
+            android:textColor="#d3d3d3"/>
+    </LinearLayout>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <com.google.android.material.bottomappbar.BottomAppBar
-            android:id="@+id/app_bar"
+        android:layout_height="match_parent">
+    <!-- TODO: Update blank fragment layout -->
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:backgroundTint="@color/pink"
-            android:gravity="center"
-            app:fabCradleMargin="5dp"
-            app:fabCradleRoundedCornerRadius="60dp"
-            app:fabCradleVerticalOffset="1dp">
-
-            <LinearLayout
+            android:fitsSystemWindows="true"
+            android:id="@+id/appbar"
+            >
+            <com.google.android.material.appbar.CollapsingToolbarLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="16dp"
-                android:baselineAligned="false">
-
+                android:fitsSystemWindows="true"
+                app:contentScrim="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+                android:id="@+id/collapsingToolBar">
                 <LinearLayout
-                    android:id="@+id/home_btn"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.2"
-                    android:orientation="vertical">
+                    android:id="@+id/constraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="16dp"
+                    >
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        app:srcCompat="@drawable/marker_statue1" />
-
-                    <TextView
+                    <androidx.recyclerview.widget.RecyclerView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="HOME"
-                        android:textAlignment="center"
-                        android:textColor="#000000"
-                        android:textSize="13sp" />
+                        android:id="@+id/rcvEvent"
+                        />
+
                 </LinearLayout>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
 
-                <LinearLayout
-                    android:id="@+id/receipt_btn"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.2"
-                    android:orientation="vertical">
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        app:srcCompat="@drawable/marker_statue2" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="RECEIPT"
-                        android:textAlignment="center"
-                        android:textColor="#000000"
-                        android:textSize="13sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.2"
-                    android:orientation="vertical"
-                    android:visibility="invisible">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        app:srcCompat="@drawable/ic_baseline_person_24" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="none"
-                        android:textAlignment="center"
-                        android:textColor="#000000"
-                        android:textSize="13sp"
-                        android:visibility="invisible" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/combo_btn"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.2"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        app:srcCompat="@drawable/marker_statue3" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="COMBO"
-                        android:textAlignment="center"
-                        android:textColor="#000000"
-                        android:textSize="13sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/event_btn"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.2"
-                    android:orientation="vertical">
-
-                    <ImageView
-                        android:id="@+id/imageView7"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        app:srcCompat="@drawable/marker_statue4" />
-
-                    <TextView
-                        android:id="@+id/textView5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="EVENT"
-                        android:textAlignment="center"
-                        android:textColor="#000000"
-                        android:textSize="13sp" />
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-        </com.google.android.material.bottomappbar.BottomAppBar>
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:backgroundTint="@color/bluesky"
-            android:elevation="2dp"
-            app:fabSize="mini"
-            app:maxImageSize="24dp"
-            app:backgroundTint="@color/bluesky"
-            android:src="@drawable/ic_baseline_add_24"
-            app:layout_anchor="@id/app_bar">
-
-        </com.google.android.material.floatingactionbutton.FloatingActionButton>
-
+            <include layout="@layout/layout_menu"></include>
+        </androidx.core.widget.NestedScrollView>
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

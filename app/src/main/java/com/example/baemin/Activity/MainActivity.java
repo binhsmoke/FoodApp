@@ -23,13 +23,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        add_to_rvResList();
-        add_to_rvFoodList();
+        /*add_to_rvResList();
+        add_to_rvFoodList();*/
     }
 
 
 
-    private void add_to_rvResList() {
+    /*private void add_to_rvResList() {
         LinearLayoutManager LLM = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         rvResList = findViewById(R.id.rvRestaurant);
         rvResList.setLayoutManager(LLM);
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
         food_adapter = new FoodAdapter(myFoodList);
         rvFoodList.setAdapter(food_adapter);
-    }
+    }*/
 
 
 }
