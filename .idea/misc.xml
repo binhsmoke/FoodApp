@@ -6,19 +6,15 @@
         <entry key="..\:/Users/luan/Documents/GitHub/FoodApp/app/src/main/res/drawable/button_bluesky.xml" value="0.1485" />
         <entry key="..\:/Users/luan/Documents/GitHub/FoodApp/app/src/main/res/drawable/button_pink.xml" value="0.134" />
         <entry key="..\:/Users/luan/Documents/GitHub/FoodApp/app/src/main/res/drawable/button_white.xml" value="0.1485" />
-        <entry key="..\:/Users/luan/Documents/GitHub/FoodApp/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.141" />
         <entry key="..\:/Users/luan/Documents/GitHub/FoodApp/app/src/main/res/drawable/shape_button.xml" value="0.178" />
         <entry key="..\:/Users/luan/Documents/GitHub/FoodApp/app/src/main/res/drawable/shape_focus_button.xml" value="0.178" />
         <entry key="..\:/Users/luan/Documents/GitHub/FoodApp/app/src/main/res/drawable/shape_inputbox.xml" value="0.1485" />
         <entry key="..\:/Users/luan/Documents/GitHub/FoodApp/app/src/main/res/drawable/shape_inputboxfocus.xml" value="0.178" />
         <entry key="..\:/Users/luan/Documents/GitHub/FoodApp/app/src/main/res/drawable/shape_toolbar.xml" value="0.1485" />
-        <entry key="..\:/Users/luan/Documents/GitHub/FoodApp/app/src/main/res/drawable/unfocus_button.xml" value="0.141" />
-        <entry key="..\:/Users/luan/Documents/GitHub/FoodApp/app/src/main/res/layout/activity_create_account.xml" value="0.264" />
-        <entry key="..\:/Users/luan/Documents/GitHub/FoodApp/app/src/main/res/layout/activity_if_account_not_exist.xml" value="0.23854166666666668" />
         <entry key="..\:/Users/luan/Documents/GitHub/FoodApp/app/src/main/res/layout/activity_login.xml" value="0.12" />
         <entry key="..\:/Users/luan/Documents/GitHub/FoodApp/app/src/main/res/layout/activity_login2.xml" value="0.23854166666666668" />
         <entry key="..\:/Users/luan/Documents/GitHub/FoodApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
-        <entry key="..\:/Users/luan/Documents/GitHub/FoodApp/app/src/main/res/layout/activity_start.xml" value="0.264" />
+        <entry key="..\:/Users/luan/Documents/GitHub/FoodApp/app/src/main/res/layout/activity_start.xml" value="0.12708333333333333" />
         <entry key="..\:/Users/luan/Documents/GitHub/FoodApp/app/src/main/res/layout/activity_welcome.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/luan/Documents/GitHub/FoodApp/app/src/main/res/layout/item_food.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/luan/Documents/GitHub/FoodApp/app/src/main/res/layout/item_restaurent.xml" value="0.22826086956521738" />

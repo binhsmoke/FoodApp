@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@color/main"
     tools:context=".Activity.StartActivity">
     <TextView
         android:layout_width="wrap_content"
@@ -14,14 +13,13 @@
         android:text="MASJOHEUN NÓNG GIÒN ĐÂY!"
         android:fontFamily="@font/baemin"
         android:textSize="28sp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="18.3sp"
         android:layout_marginTop="10dp"
-        android:textColor="@color/white"
         android:text="Hãy nhập số điện thoại để tiếp tục nhé!"/>
     <LinearLayout
         android:layout_width="match_parent"
@@ -46,7 +44,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/silver"
-
             android:text=" | Số điện thoại"/>
     </LinearLayout>
 </LinearLayout>
