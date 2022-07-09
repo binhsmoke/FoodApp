@@ -5,7 +5,7 @@
 
 
     <solid
-        android:color="@color/silver">
+        android:color="@color/white">
     </solid>
 
 

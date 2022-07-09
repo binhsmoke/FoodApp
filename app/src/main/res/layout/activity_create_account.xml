@@ -7,13 +7,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/main"
-    tools:context=".Activity.LoginActivity">
+    tools:context=".Activity.CreateAccountActivity">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/llButtonNext"
+            android:id="@+id/llButtonBegin"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_alignParentBottom="true"
@@ -55,7 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="Nhập số điện thoại của bạn để tiếp tục nhé"
+            android:text="Còn bước cuối cùng nữa thôi"
             android:textColor="@color/white"
             android:textSize="26sp"
             android:textStyle="bold"/>
@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:textColor="@color/white"
-            android:text="Mã xác nhận sẽ được gửi qua số điện thoại này"
+            android:text="Điền các thông tin sau để chúng mình có thể bắt đầu nhé!"
             android:textSize="18sp"
             />
         <LinearLayout
@@ -75,31 +75,12 @@
             android:orientation="horizontal"
             android:layout_gravity="center_vertical"
             android:gravity="center_vertical"
-            android:id="@+id/llStart">
-            <ImageView
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginLeft="20dp"
-                android:src="@drawable/ic_vietflag"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:text=" +84"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/silver"
-                android:text=" | "/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/silver"
-                />
+            >
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:weightSum="10"
+                android:layout_marginLeft="10dp"
                 android:orientation="horizontal"
                 android:gravity="center_vertical"
                 >
@@ -108,10 +89,9 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    android:hint="Số điện thoại"
-                    android:id="@+id/edtPhone"
+                    android:hint="Tên của bạn"
+                    android:id="@+id/edtName"
                     android:backgroundTint="@color/white"
-                    android:inputType="number"
                     android:background="@color/white"
                     android:maxLength="10"/>
                 <RelativeLayout
@@ -123,7 +103,7 @@
                     >
 
                     <ImageView
-                        android:id="@+id/imgButtonCancel"
+                        android:id="@+id/imgButtonCancelName"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentEnd="true"
@@ -136,6 +116,71 @@
                 </RelativeLayout>
             </LinearLayout>
         </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textColor="@color/cyan"
+            android:text="Việc dùng tên thật của bạn giúp chúng mình hiểu thêm về bạn và có thể hỗ trợ bạn một cách tốt nhất"
+            android:textSize="16sp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/shape_inputboxfocus"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:weightSum="10"
+                android:layout_marginLeft="10dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                >
+                <EditText
+                    android:layout_weight="8"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:hint="Mật khẩu"
+                    android:id="@+id/edtPassword"
+                    android:inputType="textPassword"
+                    android:background="@color/white"
+                    android:backgroundTint="@color/white"
+                    android:maxLength="10"/>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_weight="2"
+                    android:layout_marginRight="10dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/tvShowPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="10dp"
+                        android:gravity="center"
+                        android:layout_marginEnd="10dp"
+                        android:text="Hiện"
+                        android:textColor="@color/main" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textColor="@color/cyan"
+            android:text="Mật khẩu phải bằng hoặc lớn hơn 6 ký tự"
+            android:textSize="16sp"
+            />
     </LinearLayout>
 
 </FrameLayout>
