@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "402578553193",
+    "project_id": "baemin-915e4",
+    "storage_bucket": "baemin-915e4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:402578553193:android:21c976fdb911692837e5f8",
+        "android_client_info": {
+          "package_name": "com.example.baemin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "402578553193-n9r2sm00e3ig20ub42rlks9k6ojgb3fh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAb4ebNmELN1TY4z_P9u0jGKmG3DCIEbVQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "402578553193-n9r2sm00e3ig20ub42rlks9k6ojgb3fh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
