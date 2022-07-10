@@ -9,6 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="pink">#e0c5d8</color>
 
+    <color name="main">#DF121212</color>
+
     <color name="mint">#04BFAD</color>
     <color name="lightcyan">#73D9D9</color>
     <color name="cyan">#68CDD0</color>
