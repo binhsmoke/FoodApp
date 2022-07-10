@@ -2,11 +2,11 @@
     <!-- Base application theme. -->
     <style name="Theme.Baemin" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. #8cbbc3 -->
-        <item name="colorPrimary">#8cbbc3</item>
-        <item name="colorPrimaryVariant">#8cbbc3</item>
+        <item name="colorPrimary">#68CDD0</item>
+        <item name="colorPrimaryVariant">#68CDD0</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. #e0c5d8 -->
-        <item name="colorSecondary">#e0c5d8</item>
+        <item name="colorSecondary">#68CDD0</item>
         <item name="colorSecondaryVariant">@color/teal_700</item>
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
