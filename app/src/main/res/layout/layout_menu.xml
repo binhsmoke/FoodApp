@@ -53,14 +53,14 @@
         android:textStyle="bold"
         />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvRamen"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clipToPadding="false"
-            android:paddingHorizontal="22dp" />
-
-        <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvRamen"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="22dp"
+        android:clipToPadding="false"
+        />
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"

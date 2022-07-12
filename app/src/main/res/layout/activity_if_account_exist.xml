@@ -95,7 +95,7 @@
                 <EditText
                     android:layout_weight="8"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
                     android:textColor="@color/black"
                     android:hint="Mật khẩu"
                     android:id="@+id/edtPassword"

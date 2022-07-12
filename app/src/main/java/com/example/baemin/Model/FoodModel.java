@@ -1,49 +1,64 @@
 package com.example.baemin.Model;
 
-import java.io.Serializable;
+public class FoodModel {
+    private String nameFood;
+    private String picFood;
+    private Double priceFood;
+    private boolean isAvailableFood;
+    private int quantityFood;
 
-public class FoodModel implements Serializable {
-    private String food_name;
-    private int food_price;
-    private int food_quantity;
-    private int food_pic;
-
-    public FoodModel(String food_name, int food_price, int food_quantity, int food_pic) {
-        this.food_name = food_name;
-        this.food_price = food_price;
-        this.food_quantity = food_quantity;
-        this.food_pic = food_pic;
+    public FoodModel(String nameFood, String picFood, Double priceFood, boolean isAvailableFood) {
+        this.nameFood = nameFood;
+        this.picFood = picFood;
+        this.priceFood = priceFood;
+        this.isAvailableFood = isAvailableFood;
     }
 
-    public String getFood_name() {
-        return food_name;
+    public FoodModel(String nameFood, String picFood, Double priceFood, boolean isAvailableFood, int quantityFood) {
+        this.nameFood = nameFood;
+        this.picFood = picFood;
+        this.priceFood = priceFood;
+        this.isAvailableFood = isAvailableFood;
+        this.quantityFood = quantityFood;
     }
 
-    public void setFood_name(String food_name) {
-        this.food_name = food_name;
+    public String getNameFood() {
+        return nameFood;
     }
 
-    public int getFood_price() {
-        return food_price;
+    public void setNameFood(String nameFood) {
+        this.nameFood = nameFood;
     }
 
-    public void setFood_price(int food_price) {
-        this.food_price = food_price;
+    public String getPicFood() {
+        return picFood;
     }
 
-    public int getFood_quantity() {
-        return food_quantity;
+    public void setPicFood(String picFood) {
+        this.picFood = picFood;
     }
 
-    public void setFood_quantity(int food_quantity) {
-        this.food_quantity = food_quantity;
+    public Double getPriceFood() {
+        return priceFood;
     }
 
-    public int getFood_pic() {
-        return food_pic;
+    public void setPriceFood(Double priceFood) {
+        this.priceFood = priceFood;
     }
 
-    public void setFood_pic(int food_pic) {
-        this.food_pic = food_pic;
+    public boolean isAvailableFood() {
+        return isAvailableFood;
+    }
+
+    public void setAvailableFood(boolean availableFood) {
+        isAvailableFood = availableFood;
+    }
+
+    public int getQuantityFood() {
+        return quantityFood;
+    }
+
+    public void setQuantityFood(int quantityFood) {
+        this.quantityFood = quantityFood;
     }
 }

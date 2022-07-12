@@ -1,83 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="100dp"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_marginTop="1dp"
-    android:orientation="horizontal"
-    android:padding="12dp"
-    android:background="@color/white"
-    android:id="@+id/food_item">
+    android:id="@+id/food_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@drawable/button_white"
+    android:elevation="4dp">
 
-    <com.google.android.material.imageview.ShapeableImageView
+    <TextView
+        android:id="@+id/food_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="4dp"
+        android:text="food name"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
         android:id="@+id/food_pic"
-        android:layout_width="90dp"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        app:shapeAppearanceOverlay="@style/customImgView"
-        android:src="@drawable/fo1"
-        android:layout_marginHorizontal="12dp"/>
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/food_name"
+        app:srcCompat="@drawable/fo1" />
 
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical"
-        >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$"
+        android:textColor="@color/pink"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/food_price"
+        app:layout_constraintStart_toStartOf="@+id/food_pic"
+        app:layout_constraintTop_toBottomOf="@+id/food_pic" />
 
-        <TextView
-            android:id="@+id/food_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:drawableStart="@drawable/check"
-            android:drawablePadding="6dp"
-            android:text="Cơm gà ta Tường Vy -"
-            android:textSize="14sp"
-            android:textStyle="bold"
-            />
+    <TextView
+        android:id="@+id/food_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="35.000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/food_pic"
+        app:layout_constraintStart_toStartOf="@+id/food_pic"
+        app:layout_constraintTop_toBottomOf="@+id/food_pic" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:text="Mô tả (Optional): Cơm gà xé - "
-            android:padding="4dp"
-            android:textSize="12sp" />
+    <TextView
+        android:id="@+id/food_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp"
+        android:background="@drawable/button_bluesky"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="3dp"
+        android:text="+ ADD"
+        android:textColor="#ffffff"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/food_pic"
+        app:layout_constraintStart_toStartOf="@+id/food_pic"
+        app:layout_constraintTop_toBottomOf="@+id/food_price" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:gravity="bottom"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight=".5"
-                android:drawableLeft="@drawable/star"
-                android:drawablePadding="4dp"
-                android:gravity="center_vertical"
-                android:textStyle="bold"
-                android:textSize="10sp"
-                android:text="3.9" />
-
-            <TextView
-                android:id="@+id/food_price"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight=".5"
-                android:drawableLeft="@drawable/money"
-                android:drawablePadding="4dp"
-                android:gravity="center_vertical"
-                android:textStyle="bold"
-                android:textSize="10sp"
-                android:text="100.000" />
-
-        </LinearLayout>
-
-
-    </LinearLayout>
-
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
