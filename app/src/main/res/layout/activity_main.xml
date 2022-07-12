@@ -99,25 +99,31 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
-
             <!--<include layout="@layout/layout_menu"></include>-->
             <include
                 android:id="@+id/cat_layout"
                 layout="@layout/layout_categories" />
 
+
         </androidx.core.widget.NestedScrollView>
-        <LinearLayout
-            android:gravity="bottom"
-            android:layout_width="match_parent"
+
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Go to Cart"
-                android:id="@+id/gotoCart"
-                android:onClick="gotoCartActivity"/>
-                />
-        </LinearLayout>
+            android:layout_margin="18dp"
+            android:src="@drawable/ic_baseline_shopping_cart_24"
+            android:layout_gravity="bottom|end"
+            app:tint="@color/white"
+            android:scaleType="center"
+            app:fabCustomSize="56dp"
+            android:onClick="gotoCartActivity"
+            />
+
+
+
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+
 </LinearLayout>

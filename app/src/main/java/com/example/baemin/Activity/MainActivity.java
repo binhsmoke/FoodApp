@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.baemin.Adapter.CategoriesAdapter;
+import com.example.baemin.Interfaces.IClick_Item;
 import com.example.baemin.Model.CategoriesModel;
 import com.example.baemin.R;
 
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     } //end of main
 
-    //upload3 - Categories
+    //- Categories
     private void addRvCat() {
         View viewCat = findViewById(R.id.cat_layout);
         RecyclerView rvCategories = viewCat.findViewById(R.id.cat_rv);
@@ -46,14 +47,19 @@ public class MainActivity extends AppCompatActivity {
         rawCatModel.add(new CategoriesModel("Salad", R.drawable.cat1));
         rawCatModel.add(new CategoriesModel("Snack", R.drawable.cat1));
         rawCatModel.add(new CategoriesModel("Nước ngọt - Bia", R.drawable.cat1));
-
+        //
         adapterCategories.loadAdapter(rawCatModel);
         rvCategories.setAdapter(adapterCategories);
+
     }
 
 
-    //di den Gio Hang tam thoi - sau nay xoa
+
+    //di den Gio Hang tam thoi = Floating button
     public void gotoCartActivity(View view) {
         startActivity(new Intent(MainActivity.this, CartActivity.class));
+    }    //di den Gio Hang tam thoi = Floating button
+    public void gotoFoodActivity(View view) {
+        startActivity(new Intent(MainActivity.this, FoodActivity.class));
     }
 }

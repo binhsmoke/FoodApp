@@ -1,6 +1,8 @@
 package com.example.baemin.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,17 +12,22 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.baemin.Activity.DetailActivity;
+import com.example.baemin.Activity.FoodActivity;
+import com.example.baemin.Interfaces.IClick_Item;
 import com.example.baemin.Model.CategoriesModel;
 import com.example.baemin.R;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.CategoriesViewHolder> {
-    private Context mContext;
-    private List<CategoriesModel> mList;
 
-    public CategoriesAdapter(Context context) {
-        this.mContext = context;
+    private List<CategoriesModel> mList;
+    private Context mContext;
+
+    public CategoriesAdapter( Context mContext) {
+        this.mContext = mContext;
     }
 
     public void loadAdapter(List<CategoriesModel> list) {
@@ -41,8 +48,16 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Ca
         if (catModel == null) {
             return;
         }
-        holder.imgCat.setImageResource(catModel.getCat_pic());
         holder.tvCat.setText(catModel.getCat_name());
+        holder.imgCat.setImageResource(catModel.getCat_pic());
+        holder.imgCat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(mContext, FoodActivity.class);
+                mContext.startActivity(i);
+            }
+        });
+
     }
 
     @Override

@@ -1,36 +1,32 @@
 package com.example.baemin.Adapter;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.baemin.Interface.IClickCartItem;
-import com.example.baemin.Model.CartModel;
+import com.example.baemin.Interfaces.IClick_Item;
+import com.example.baemin.Model.FoodModel;
 import com.example.baemin.R;
 
 import java.util.List;
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder> {
-    private List<CartModel> mList;
-    private IClickCartItem iClickCartItem;
+    private List<FoodModel> mList;
+    private IClick_Item iClickItem;
     /*private Context mContext;
 
     public CartAdapter(Context context) {
         this.mContext = context;
     }*/
 
-    public void loadAdapter(List<CartModel> list, IClickCartItem iClickCartItem) {
+    public void loadAdapter(List<FoodModel> list, IClick_Item iClickItem) {
         this.mList = list;
-        this.iClickCartItem=iClickCartItem;
+        this.iClickItem = iClickItem;
         notifyDataSetChanged();
     }
 
@@ -43,41 +39,41 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull CartViewHolder holder, int position) {
-        CartModel cartModel = mList.get(position);
-        if (cartModel == null) {
+        FoodModel foodModel = mList.get(position);
+        if (foodModel == null) {
 //            Toast.makeText(mContext, "Khong co gi trong gio hang", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        holder.tvName.setText(cartModel.getCart_name());
-        holder.tvPrice.setText(String.valueOf(cartModel.getCart_price()));
-        holder.tvQuantity.setText(String.valueOf(cartModel.getCart_quantity()));
+        holder.tvName.setText(foodModel.getFood_name());
+        holder.tvPrice.setText(String.valueOf(foodModel.getFood_price()));
+        holder.tvQuantity.setText(String.valueOf(foodModel.getFood_quantity()));
 
         holder.btnLess.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int soluonggiam = cartModel.getCart_quantity()-1;
+                int soluonggiam = foodModel.getFood_quantity()-1;
                 if (soluonggiam<=0){
                     mList.remove(position);
                     notifyDataSetChanged();
                 }else   {
-                cartModel.setCart_quantity(soluonggiam);
-                holder.tvQuantity.setText(String.valueOf(cartModel.getCart_quantity()));
+                foodModel.setFood_quantity(soluonggiam);
+                holder.tvQuantity.setText(String.valueOf(foodModel.getFood_quantity()));
                 }
             }
         });
         holder.btnMore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int soluongtang = cartModel.getCart_quantity()+1;
-                cartModel.setCart_quantity(soluongtang);
-                holder.tvQuantity.setText(String.valueOf(cartModel.getCart_quantity()));
+                int soluongtang = foodModel.getFood_quantity()+1;
+                foodModel.setFood_quantity(soluongtang);
+                holder.tvQuantity.setText(String.valueOf(foodModel.getFood_quantity()));
             }
         });
         holder.layout_cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                iClickCartItem.onClickCartItemAll(cartModel);
+                iClickItem.onClickCartItem(foodModel);
             }
         });
 
@@ -103,7 +99,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
             tvQuantity = itemView.findViewById(R.id.cart_quantity);
             btnMore = itemView.findViewById(R.id.cart_more);
             btnLess = itemView.findViewById(R.id.cart_less);
-            layout_cart = itemView.findViewById(R.id.cart_layout);
+            layout_cart = itemView.findViewById(R.id.cart_item);
         }
     }
 

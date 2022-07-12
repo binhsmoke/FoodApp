@@ -1,6 +1,8 @@
 package com.example.baemin.Model;
 
-public class CategoriesModel {
+import java.io.Serializable;
+
+public class CategoriesModel implements Serializable {
     private String cat_name;
     private int cat_pic;
 
