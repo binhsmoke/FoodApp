@@ -41,10 +41,13 @@ public class FoodActivity extends AppCompatActivity {
     private List<FoodModel> getListCategory() {
         List<FoodModel> rawFoodModel = new ArrayList<>();
         rawFoodModel.add(new FoodModel("Bánh gạo số 1", 1000, 2, R.drawable.fo1));
-        rawFoodModel.add(new FoodModel("Bánh gạo số 2", 2000, 3, R.drawable.ic_vietflag));
-        rawFoodModel.add(new FoodModel("Bánh gạo số 3", 3000, 4, R.drawable.ic_baseline_cancel));
-        rawFoodModel.add(new FoodModel("Bánh gạo số 4", 4000, 5, R.drawable.ic_baseline_person_24));
-        rawFoodModel.add(new FoodModel("Bánh gạo số 5", 5000, 6, R.drawable.fo1));
+        rawFoodModel.add(new FoodModel("Bánh gạo số 2", 2000, 3, R.color.teal_200));
+        rawFoodModel.add(new FoodModel("Bánh gạo số 3", 3000, 4, R.color.orange));
+        rawFoodModel.add(new FoodModel("Bánh gạo số 4", 4000, 5, R.color.green));
+        rawFoodModel.add(new FoodModel("Bánh gạo số 1111111", 1000, 2, R.drawable.fo1));
+        rawFoodModel.add(new FoodModel("Bánh gạo số 5", 5000, 6, R.color.red));
+        rawFoodModel.add(new FoodModel("Bánh gạo số 5", 5000, 6, R.color.black));
+        rawFoodModel.add(new FoodModel("Bánh gạo số 1111111111111111111", 1000, 2, R.drawable.fo1));
 
         return rawFoodModel;
     }
