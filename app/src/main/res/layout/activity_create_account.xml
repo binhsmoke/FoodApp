@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/main"
+    android:background="@color/white"
     tools:context=".Activity.CreateAccountActivity">
     <RelativeLayout
         android:layout_width="match_parent"
@@ -61,14 +61,14 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="Còn bước cuối cùng nữa thôi"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="26sp"
             android:textStyle="bold"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:text="Điền các thông tin sau để chúng mình có thể bắt đầu nhé!"
             android:textSize="18sp"
             />
@@ -96,7 +96,7 @@
                     android:textColor="@color/black"
                     android:hint="Tên của bạn"
                     android:id="@+id/edtName"
-                    android:backgroundTint="@color/white"
+                    android:backgroundTint="@color/antiflash"
                     android:background="@color/white"
                     android:maxLength="22"/>
                 <RelativeLayout
@@ -155,7 +155,7 @@
                     android:id="@+id/edtPassword"
                     android:inputType="textPassword"
                     android:background="@color/white"
-                    android:backgroundTint="@color/white"
+                    android:backgroundTint="@color/antiflash"
                     android:maxLength="10"/>
                 <RelativeLayout
                     android:layout_width="0dp"

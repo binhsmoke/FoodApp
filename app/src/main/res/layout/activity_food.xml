@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/antiflash"
     tools:context=".Activity.FoodActivity">
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,7 +17,7 @@
         <ImageView
             android:id="@+id/CartCancel"
             android:layout_width="0dp"
-            android:layout_weight=".1"
+            android:layout_weight="0.5"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_baseline_arrow_back_24_black"
             android:adjustViewBounds="true"
@@ -28,19 +27,37 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="5"
             android:gravity="center_horizontal"
             android:text="Sản phẩm = CategoryID"
             android:textSize="16sp"
-            android:textStyle="bold" />
-
+            android:textStyle="bold"
+            android:id="@+id/tvCategoryName"/>
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/llLoading"
+        android:layout_gravity="center"
+        android:gravity="center"
+        >
+        <ImageView
+            android:id="@+id/gifLoading"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/loading"/>
 
     </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/food_rv"
+        android:id="@+id/rcvFood"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:layout_margin="10dp"
         />
 
 

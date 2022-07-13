@@ -1,74 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/food_layout"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp"
-    android:background="@drawable/button_white"
-    android:elevation="4dp">
-
-    <TextView
-        android:id="@+id/food_name"
-        android:layout_width="wrap_content"
+    android:background="@drawable/shape_item_food"
+    android:orientation="horizontal"
+    android:padding="10dp">
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="7"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="4dp"
-        android:text="food name"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        android:paddingRight="5dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ten mon an"
+            android:textColor="@color/black"
+            android:textSize="16dp"
+            android:id="@+id/tvFoodName"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:id="@+id/tvDescription"
+            android:text="aaaaaaaaaaaaaaaaa"/>
 
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="10.000"
+            android:textSize="16dp"
+            android:textColor="@color/black" />
+    </LinearLayout>
     <ImageView
-        android:id="@+id/food_pic"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/food_name"
-        app:srcCompat="@drawable/fo1" />
-
-    <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="$"
-        android:textColor="@color/pink"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/food_price"
-        app:layout_constraintStart_toStartOf="@+id/food_pic"
-        app:layout_constraintTop_toBottomOf="@+id/food_pic" />
-
-    <TextView
-        android:id="@+id/food_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="35.000"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/food_pic"
-        app:layout_constraintStart_toStartOf="@+id/food_pic"
-        app:layout_constraintTop_toBottomOf="@+id/food_pic" />
-
-    <TextView
-        android:id="@+id/food_add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="6dp"
-        android:background="@drawable/button_bluesky"
-        android:paddingHorizontal="12dp"
-        android:paddingVertical="3dp"
-        android:text="+ ADD"
-        android:textColor="#ffffff"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/food_pic"
-        app:layout_constraintStart_toStartOf="@+id/food_pic"
-        app:layout_constraintTop_toBottomOf="@+id/food_price" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_weight="3"
+        android:id="@+id/ivFoodImg"/>
+</LinearLayout>

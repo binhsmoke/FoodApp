@@ -20,6 +20,9 @@
             android:exported="true"
             android:windowSoftInputMode="adjustResize"></activity>
         <activity
+            android:name=".Activity.FoodActivity"
+            android:exported="true"></activity>
+        <activity
             android:name=".Activity.IfAccountNotExistActivity"
             android:exported="true"></activity>
         <activity

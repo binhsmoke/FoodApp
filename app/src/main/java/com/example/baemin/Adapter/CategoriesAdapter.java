@@ -1,8 +1,6 @@
 package com.example.baemin.Adapter;
 
 import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,25 +10,26 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.baemin.Activity.DetailActivity;
-import com.example.baemin.Activity.FoodActivity;
-import com.example.baemin.Interfaces.IClick_Item;
-import com.example.baemin.Model.CategoriesModel;
+/*import com.example.baemin.Activity.FoodActivity;*/
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.CenterCrop;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
+import com.bumptech.glide.request.RequestOptions;
+import com.example.baemin.Model.Category;
 import com.example.baemin.R;
 
-import java.io.Serializable;
 import java.util.List;
 
 public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.CategoriesViewHolder> {
 
-    private List<CategoriesModel> mList;
+    private List<Category> mList;
     private Context mContext;
 
     public CategoriesAdapter( Context mContext) {
         this.mContext = mContext;
     }
 
-    public void loadAdapter(List<CategoriesModel> list) {
+    public void loadAdapter(List<Category> list) {
         this.mList = list;
         notifyDataSetChanged();
     }
@@ -44,17 +43,19 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Ca
 
     @Override
     public void onBindViewHolder(@NonNull CategoriesViewHolder holder, int position) {
-        CategoriesModel catModel = mList.get(position);
+        Category catModel = mList.get(position);
         if (catModel == null) {
             return;
         }
-        holder.tvCat.setText(catModel.getCat_name());
-        holder.imgCat.setImageResource(catModel.getCat_pic());
+        holder.tvCat.setText(catModel.getNameType());
+        RequestOptions requestOptions = new RequestOptions();
+        requestOptions = requestOptions.transforms(new CenterCrop(), new RoundedCorners(15));
+        Glide.with(mContext).load(catModel.getImage()).apply(requestOptions).into(holder.imgCat);
         holder.imgCat.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v) {/*
                 Intent i = new Intent(mContext, FoodActivity.class);
-                mContext.startActivity(i);
+                mContext.startActivity(i);*/
             }
         });
 

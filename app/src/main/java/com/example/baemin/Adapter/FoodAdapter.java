@@ -1,29 +1,30 @@
 package com.example.baemin.Adapter;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
+import android.view.ViewGroup; 
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.baemin.Model.FoodModel;
+import com.example.baemin.Model.Food;
 import com.example.baemin.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
 
-    ArrayList<FoodModel> foodModel;
-
-    public FoodAdapter(ArrayList<FoodModel> foodModel) {
-        this.foodModel = foodModel;
+    List<Food> alFood;
+    Context context;
+    public FoodAdapter(List<Food> alFood, Context context) {
+        this.alFood = alFood;
+        this.context = context;
     }
 
     @NonNull
@@ -37,29 +38,28 @@ public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ViewHolder> {
     @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        String picUrl = foodModel.get(position).getPicFood();
-        holder.fname.setText(foodModel.get(position).getNameFood());
-        holder.fprice.setText(Double.toString(foodModel.get(position).getPriceFood()));
-        int drawNumber = holder.itemView.getContext().getResources().getIdentifier(picUrl,"drawable", holder.itemView.getContext().getPackageName());
-        Glide.with(holder.itemView.getContext())
-                .load(drawNumber)
-                .into(holder.fpic);
+        holder.tvName.setText(alFood.get(position).getNameFood());
+        holder.tvPrice.setText(alFood.get(position).getPriceFood()+" VND");
+        Glide.with(context)
+                .load(alFood.get(position).getImage())
+                .into(holder.imgImage);
+        holder.tvDescription.setText(alFood.get(position).getIngredients());
     }
 
     @Override
     public int getItemCount() {
-        return foodModel.size();
+        return alFood.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        TextView fname, fprice, fadd;
-        ImageView fpic;
+        TextView tvName, tvPrice, tvDescription;
+        ImageView imgImage;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            fname = itemView.findViewById(R.id.food_name);
-            fprice = itemView.findViewById(R.id.food_price);
-            fadd = itemView.findViewById(R.id.food_add);
-            fpic = itemView.findViewById(R.id.food_pic);
+            tvName = itemView.findViewById(R.id.tvFoodName);
+            tvPrice = itemView.findViewById(R.id.tvPrice);
+            tvDescription = itemView.findViewById(R.id.tvDescription);
+            imgImage = itemView.findViewById(R.id.ivFoodImg);
         }
     }
 }

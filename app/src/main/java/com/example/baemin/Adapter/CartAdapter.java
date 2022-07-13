@@ -10,19 +10,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.baemin.Interfaces.IClick_Item;
-import com.example.baemin.Model.FoodModel;
 import com.example.baemin.R;
 
 import java.util.List;
 
-public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder> {
-    private List<FoodModel> mList;
+/*public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder> {*/
+    /*private List<FoodModel> mList;
     private IClick_Item iClickItem;
-    /*private Context mContext;
+    *//*private Context mContext;
 
     public CartAdapter(Context context) {
         this.mContext = context;
-    }*/
+    }*//*
 
     public void loadAdapter(List<FoodModel> list, IClick_Item iClickItem) {
         this.mList = list;
@@ -103,5 +102,5 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         }
     }
 
-
-}
+*/
+/*}*/

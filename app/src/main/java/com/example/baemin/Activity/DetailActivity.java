@@ -5,9 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.baemin.Model.FoodModel;
 import com.example.baemin.R;
 
 public class DetailActivity extends AppCompatActivity {
@@ -24,12 +22,12 @@ public class DetailActivity extends AppCompatActivity {
         tvPrice = findViewById(R.id.detail_price);
         tvQuantity = findViewById(R.id.detail_quantity);
         Bundle bun = getIntent().getExtras();
-        FoodModel foodModel = (FoodModel) bun.get("my_food");
+        /*FoodModel foodModel = (FoodModel) bun.get("my_food");
         imgPic.setImageResource(foodModel.getFood_pic());
         tvName.setText(foodModel.getFood_name());
         tvPrice.setText(String.valueOf(foodModel.getFood_price()));
         tvQuantity.setText(String.valueOf(foodModel.getFood_quantity()));
-
+*/
     }
 
 }
