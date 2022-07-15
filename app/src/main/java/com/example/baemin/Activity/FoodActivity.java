@@ -92,7 +92,12 @@ public class FoodActivity extends AppCompatActivity {
                     rcvFood.addOnItemTouchListener(new RecyclerItemClickListener(FoodActivity.this, rcvFood, new RecyclerItemClickListener.OnItemClickListener() {
                         @Override
                         public void onItemClick(View view, int position) {
-
+                            Food food = alFood.get(position);
+                            Intent intent = new Intent(FoodActivity.this, DetailActivity.class);
+                            Bundle bundle = new Bundle();
+                            bundle.putSerializable("KEY_FOOD",food);
+                            intent.putExtras(bundle);
+                            startActivity(intent);
                         }
 
                         @Override

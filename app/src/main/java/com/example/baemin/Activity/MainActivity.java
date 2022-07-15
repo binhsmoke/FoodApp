@@ -1,6 +1,7 @@
 package com.example.baemin.Activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,14 +15,19 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.DrawableImageViewTarget;
 import com.example.baemin.Adapter.CategoriesAdapter;
+import com.example.baemin.DAO.CartDao;
 import com.example.baemin.DAO.CategoryDao;
+import com.example.baemin.Helpers.MasjoheunSQLite;
 import com.example.baemin.Listener.RecyclerItemClickListener;
+import com.example.baemin.Model.Cart;
 import com.example.baemin.Model.Category;
 import com.example.baemin.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -43,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
     LinearLayout llLoading;
     ImageView gifLoading;
     String token;
+    FloatingActionButton fabCart;
+    TextView tvQuantityCart;
+    ConstraintLayout clCart;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +70,26 @@ public class MainActivity extends AppCompatActivity {
 
         CategoryDao categoryDao = new CategoryDao(token);
         categoryDao.GetCategory(MainActivity.this);
+
+        fabCart = findViewById(R.id.fbtCart);
+        tvQuantityCart = findViewById(R.id.tvCartQuantity);
+
+        clCart = findViewById(R.id.clCart);
+        this.runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                ArrayList<Cart> alCart = new CartDao().Read(MainActivity.this,new MasjoheunSQLite(MainActivity.this));
+                if(alCart.size()!=0){
+                    clCart.setVisibility(View.VISIBLE);
+                    tvQuantityCart.setText(alCart.size()+"");
+                    fabCart.setOnClickListener(v->setFabCart());
+                }else if(alCart.size()==0)
+                    clCart.setVisibility(View.GONE);
+                Handler handler = new Handler();
+                handler.postDelayed(this,500);
+            }
+        });
+
         this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -104,8 +133,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-
+    void setFabCart(){
+        startActivity(new Intent(this, CartActivity.class));
+    }
     /*private void add_to_rvResList() {
         LinearLayoutManager LLM = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         rvResList = findViewById(R.id.rvRestaurant);

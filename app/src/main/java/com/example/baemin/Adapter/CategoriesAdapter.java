@@ -51,13 +51,13 @@ public class CategoriesAdapter extends RecyclerView.Adapter<CategoriesAdapter.Ca
         RequestOptions requestOptions = new RequestOptions();
         requestOptions = requestOptions.transforms(new CenterCrop(), new RoundedCorners(15));
         Glide.with(mContext).load(catModel.getImage()).apply(requestOptions).into(holder.imgCat);
-        holder.imgCat.setOnClickListener(new View.OnClickListener() {
+        /*holder.imgCat.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {/*
+            public void onClick(View v) {*//*
                 Intent i = new Intent(mContext, FoodActivity.class);
-                mContext.startActivity(i);*/
+                mContext.startActivity(i);*//*
             }
-        });
+        });*/
 
     }
 

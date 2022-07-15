@@ -23,6 +23,12 @@
             android:name=".Activity.FoodActivity"
             android:exported="true"></activity>
         <activity
+            android:name=".Activity.CartActivity"
+            android:exported="true"></activity>
+        <activity
+            android:name=".Activity.DetailActivity"
+            android:exported="true"></activity>
+        <activity
             android:name=".Activity.IfAccountNotExistActivity"
             android:exported="true"></activity>
         <activity

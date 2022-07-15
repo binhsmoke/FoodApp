@@ -1,6 +1,8 @@
 package com.example.baemin.Model;
 
-public class Food {
+import java.io.Serializable;
+
+public class Food implements Serializable {
     int id;
     String nameFood;
     int priceFood;
