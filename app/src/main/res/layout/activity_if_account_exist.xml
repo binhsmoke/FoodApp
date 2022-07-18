@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/main"
+    android:background="@color/white"
     tools:context=".Activity.IfAccountExistActivity">
     <RelativeLayout
         android:layout_width="match_parent"
@@ -61,7 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="Nhập mật khẩu"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="26sp"
             android:textStyle="bold"/>
         <TextView
@@ -69,7 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:text="0906445217"
             android:textSize="18sp"
             />
@@ -95,13 +95,13 @@
                 <EditText
                     android:layout_weight="8"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="40dp"
                     android:textColor="@color/black"
                     android:hint="Mật khẩu"
                     android:id="@+id/edtPassword"
                     android:inputType="textPassword"
                     android:background="@color/white"
-                    android:backgroundTint="@color/white"
+                    android:backgroundTint="@color/antiflash"
                     android:maxLength="10"/>
                 <RelativeLayout
                     android:layout_width="0dp"

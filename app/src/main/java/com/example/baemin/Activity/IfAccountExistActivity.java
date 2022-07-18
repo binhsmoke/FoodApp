@@ -84,7 +84,13 @@ public class IfAccountExistActivity extends AppCompatActivity {
                 ClientDao clientDao = new ClientDao();
                 clientDao.Login(phone, password, IfAccountExistActivity.this);
                 pbLoading.setVisibility(View.VISIBLE);
+                onRestart();
             }
         });
+    }
+    @Override
+    public void onRestart() {
+        super.onRestart();
+        pbLoading.setVisibility(View.GONE);
     }
 }

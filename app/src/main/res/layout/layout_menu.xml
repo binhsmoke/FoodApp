@@ -7,223 +7,24 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:text="Bánh gạo"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvBanhGao"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clipToPadding="false"
-            android:paddingHorizontal="22dp" />
-
         <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:text="Buổi trưa"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvBuoiTrua"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="22dp"
-        android:clipToPadding="false"
-         />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:text="Ramen"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvRamen"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:clipToPadding="false"
-            android:paddingHorizontal="22dp" />
-
-        <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:text="Canh Hàn Quôc"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvCanhHanQuoc"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="22dp"
-        android:clipToPadding="false"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:text="Gà rán sốt"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvGaRanSot"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="22dp"
-        android:clipToPadding="false"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:text="Gà rán không xương"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvGaRanKhongXuong"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="22dp"
-        android:clipToPadding="false"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:text="Gà rán không xương phô mai"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvGaRanKhongXuongPhoMai"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="22dp"
-        android:clipToPadding="false"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:text="Gà nướng sốt"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvGaNuongSot"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="22dp"
-        android:clipToPadding="false"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:text="Gà nướng không xương phô mai"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvGaNuongKhongXuongPhoMai"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="22dp"
-        android:clipToPadding="false"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:text="Salad"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvSalad"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="22dp"
-        android:clipToPadding="false"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:text="Snack"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvSnack"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="22dp"
-        android:clipToPadding="false"
-        />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
-        android:text="Nước ngọt - Bia"
-        android:textColor="#000000"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvNuocNgotBia"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingHorizontal="22dp"
-        android:clipToPadding="false"
-        />
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:text="Nhất định bạn phải thử"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/rcvCategory"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:foregroundGravity="center"
+            android:layout_marginTop="10dp"
+            />
     </LinearLayout>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="1700dp"/>
 </LinearLayout>

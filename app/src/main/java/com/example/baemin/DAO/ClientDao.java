@@ -50,7 +50,7 @@ public class ClientDao implements IClient {
                         sharedPref = context.getSharedPreferences("Client", Context.MODE_PRIVATE);
                         editor = sharedPref.edit();
                         editor.putString("KEY_PHONE", client.getPhone());
-                        editor.putString("KEY_TOKEN", token.getToken());
+                        editor.putString("KEY_TOKEN","Bearer "+ token.getToken());
                         editor.commit();
 
                         context.startActivity(new Intent(context, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY));
@@ -134,10 +134,10 @@ public class ClientDao implements IClient {
                         sharedPref = context.getSharedPreferences("Client", Context.MODE_PRIVATE);
                         editor = sharedPref.edit();
                         editor.putString("KEY_PHONE", phone);
-                        editor.putString("KEY_TOKEN", token.getToken());
+                        editor.putString("KEY_TOKEN","Bearer "+ token.getToken());
                         editor.commit();
 
-                        context.startActivity(new Intent(context, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY));
+                        context.startActivity(new Intent(context, MainActivity.class));
 
                     }
                     @Override
@@ -150,6 +150,8 @@ public class ClientDao implements IClient {
                         }else
                         if(((HttpException) e).code()==400){
                             Toast.makeText(context,"Tài khoản hoặc mật khẩu không hợp lệ",Toast.LENGTH_SHORT).show();
+
+
                         }
                     }
                     @Override

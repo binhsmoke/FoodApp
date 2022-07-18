@@ -7,123 +7,168 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Activity.MainActivity">
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="10dp">
+        android:padding="10dp"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:orientation="horizontal">
-
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
             <TextView
                 android:id="@+id/tvLocation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_location"
                 android:text="Nhà"
                 android:textSize="18sp"
-                android:textStyle="bold" />
-
+                android:textStyle="bold"
+                android:drawableLeft="@drawable/ic_location"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=" >"
                 android:textSize="18sp"
-                android:textStyle="bold" />
-
+                android:textStyle="bold"/>
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
+                android:layout_height="match_parent"
+                >
                 <ImageView
-                    android:id="@+id/icMenu"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:src="@drawable/ic_menu" />
+                    android:src="@drawable/ic_menu"
+                    android:id="@+id/icMenu"
+                    />
             </RelativeLayout>
         </LinearLayout>
-
-        <EditText
+        <TextView
             android:id="@+id/swUserSearch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:autofillHints=""
             android:background="@drawable/shape_searchtool"
-            android:drawableLeft="@drawable/ic_search"
-            android:gravity="center"
-            android:hint="Tìm món ăn"
+            app:searchIcon="@null"
             android:padding="5dp"
-            app:searchIcon="@null" />
+            android:text="Tìm món ăn"
+            android:gravity="center"
+            android:drawableLeft="@drawable/ic_search"
+            android:textColor="#d3d3d3"/>
     </LinearLayout>
-
-    <androidx.coordinatorlayout.widget.CoordinatorLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <!-- TODO: Update blank fragment layout -->
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fitsSystemWindows="true">
 
-            <com.google.android.material.appbar.CollapsingToolbarLayout
-                android:id="@+id/collapsingToolBar"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fitsSystemWindows="true"
-                app:contentScrim="?attr/colorPrimary"
-                app:layout_scrollFlags="scroll|snap|exitUntilCollapsed">
-
-                <LinearLayout
-                    android:id="@+id/constraintLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:layout_marginTop="16dp">
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rcvEvent"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
-
-                </LinearLayout>
-            </com.google.android.material.appbar.CollapsingToolbarLayout>
-        </com.google.android.material.appbar.AppBarLayout>
-
-        <androidx.core.widget.NestedScrollView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
-            <!--<include layout="@layout/layout_menu"></include>-->
-            <include
-                android:id="@+id/cat_layout"
-                layout="@layout/layout_categories" />
+            android:id="@+id/llLoading"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:visibility="gone"
+            >
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/loading"
+                android:id="@+id/gifLoading"/>
 
+        </LinearLayout>
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <!-- TODO: Update blank fragment layout -->
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true"
+                android:id="@+id/appbar"
+                >
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fitsSystemWindows="true"
+                    app:contentScrim="@color/white"
+                    app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
+                    android:id="@+id/collapsingToolBar">
+                    <LinearLayout
+                        android:id="@+id/constraintLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="260dp"
+                        android:orientation="vertical"
+                        >
+                        <!--<androidx.recyclerview.widget.RecyclerView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/rcvEvent"
+                            />-->
+                        <ImageView
+                            android:background="@color/white"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/app_banner__giaroi"
 
-        </androidx.core.widget.NestedScrollView>
+                            />
+                    </LinearLayout>
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+            </com.google.android.material.appbar.AppBarLayout>
 
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="18dp"
-            android:src="@drawable/ic_baseline_shopping_cart_24"
-            android:layout_gravity="bottom|end"
-            app:tint="@color/white"
-            android:scaleType="center"
-            app:fabCustomSize="56dp"
-            android:onClick="gotoCartActivity"
-            />
+                <include layout="@layout/layout_menu"/>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:visibility="gone"
+                android:id="@+id/clCart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="100dp"
+                android:layout_marginRight="50dp"
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                >
 
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fbtCart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:src="@drawable/ic_baseline_shopping_cart_24"
+                    app:rippleColor="@color/white"
+                    />
 
-    </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-
-
+                <TextView
+                    android:id="@+id/tvCartQuantity"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_above="@+id/fbtCart"
+                    android:layout_toLeftOf="@+id/fbtCart"
+                    android:text="1"
+                    android:textAlignment="center"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@color/white"
+                    android:background="@drawable/shape_cart_count"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toTopOf="@+id/fbtCart"
+                    app:layout_constraintEnd_toEndOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
+    </FrameLayout>
 </LinearLayout>

@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:text="Xóa"
-            android:textColor="@color/red"
+
             android:textSize="16sp"
             android:textStyle="bold" />
 
@@ -75,6 +75,7 @@
                 android:layout_weight=".3"
                 android:gravity="center"
                 android:text="1 Món"
+                android:id="@+id/tvTotalCartQuantity"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
@@ -95,6 +96,7 @@
                 android:layout_weight=".4"
                 android:gravity="center"
                 android:text="165.000đ"
+                android:id="@+id/tvTotalCartPrice"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
