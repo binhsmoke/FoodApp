@@ -132,7 +132,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
+    void getLocation(){
+        
+    }
     void setFabCart(){
         startActivity(new Intent(this, CartActivity.class));
     }
