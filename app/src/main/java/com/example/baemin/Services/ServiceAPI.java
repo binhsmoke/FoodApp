@@ -29,6 +29,6 @@ public interface ServiceAPI {
     Observable<Token> LoginClient(@Query("phone") String phone, @Query("password") String passsword);
     @GET("api/get-food")
     Observable<ArrayList<Food>> GetFood(@Header("Authorization") String token,@Query("idType") int idType);
-    @GET("api/get-category")
+    @GET("api/get-category") 
     Observable<ArrayList<Category>> GetCategory(@Header("Authorization") String token);
 }

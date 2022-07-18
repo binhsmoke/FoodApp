@@ -46,7 +46,7 @@ public class CartActivity extends AppCompatActivity {
             @Override
             public void run() {
                 SQLiteDatabase sqLiteDatabase = new MasjoheunSQLite(CartActivity.this).getReadableDatabase();
-                Cursor cursor = sqLiteDatabase.rawQuery("select count("+MasjoheunSQLite.KEY_QUANTITY+")"+" from "+MasjoheunSQLite.TABLE_RECEIPT_DETAIL,null);
+                Cursor cursor = sqLiteDatabase.rawQuery("select sum("+MasjoheunSQLite.KEY_QUANTITY+")"+" from "+MasjoheunSQLite.TABLE_RECEIPT_DETAIL,null);
                 cursor.moveToFirst();
                 int TotalQuantity = cursor.getInt(0);
                 cursor = sqLiteDatabase.rawQuery("select sum("+MasjoheunSQLite.KEY_PRICE+")"+" from "+MasjoheunSQLite.TABLE_RECEIPT_DETAIL,null);
