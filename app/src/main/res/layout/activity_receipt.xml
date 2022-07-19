@@ -146,7 +146,7 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight=".1"
+                    android:layout_weight=".3"
                     android:text="Tạm tính"
                     android:textSize="12sp"
                     android:textColor="@color/black"
@@ -154,7 +154,7 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight=".2"
+                    android:layout_weight=".15"
                     android:text="3 món"
                     android:textSize="12sp"
                     android:textColor="@color/black"
@@ -180,7 +180,7 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight=".1"
+                    android:layout_weight=".3"
                     android:text="Phí áp dụng"
                     android:textSize="12sp"
                     android:textColor="@color/black"
@@ -188,7 +188,7 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight=".2"
+                    android:layout_weight=".15"
                     android:text="1.5 km"
                     android:textStyle="bold"
                     android:textSize="12sp"
@@ -217,7 +217,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_gravity="bottom"
-        android:layout_weight=".25"
+        android:layout_weight=".2"
         android:background="@color/white"
         android:gravity="center"
         android:orientation="horizontal">
@@ -226,7 +226,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="16dp"
-            android:background="@drawable/focus_button"
+
             android:orientation="horizontal"
             android:padding="8dp">
 
@@ -235,9 +235,10 @@
                 android:layout_height="match_parent"
                 android:layout_weight=".3"
                 android:gravity="center"
-                android:text="1 Món"
-                android:textAlignment="center"
-                android:textColor="@color/white"
+                android:text="100.000 vnd"
+                android:textStyle="bold"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
                 android:textSize="16sp" />
 
             <TextView
@@ -245,20 +246,12 @@
                 android:layout_height="match_parent"
                 android:layout_weight=".6"
                 android:gravity="center"
-                android:text="Trang thanh toán"
+                android:text="Đặt hàng"
                 android:textAlignment="center"
                 android:textColor="@color/white"
+                android:background="@drawable/focus_button"
                 android:textSize="16sp" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight=".4"
-                android:gravity="center"
-                android:text="165.000đ"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
 
 
         </LinearLayout>

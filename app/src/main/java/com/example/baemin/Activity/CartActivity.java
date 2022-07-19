@@ -9,6 +9,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
 import android.widget.TextView;
 
 /*import com.example.baemin.Adapter.CartAdapter;*/
@@ -27,6 +28,8 @@ public class CartActivity extends AppCompatActivity {
     RecyclerView rvCart;
     CartAdapter adapterCart;
     TextView tvTotalCartQuantity, tvTotalPrice;
+    // binh: chuyen sang trang thanh toan
+    TextView tvGotoReceipt;
     Handler handler;
     Runnable runnable;
     @Override
@@ -36,6 +39,14 @@ public class CartActivity extends AppCompatActivity {
         rvCart = findViewById(R.id.cart_rv);
         tvTotalCartQuantity=findViewById(R.id.tvTotalCartQuantity);
         tvTotalPrice=findViewById(R.id.tvTotalCartPrice);
+            //binh: chuyen sang trang thanh toan ( chua get du lieu )
+        tvGotoReceipt=findViewById(R.id.tvGoToReceipt);
+        tvGotoReceipt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(CartActivity.this, ReceiptActivity.class));
+            }
+        });
         CartDao cartDao = new CartDao();
         adapterCart = new CartAdapter(this,cartDao.Read(this,new MasjoheunSQLite(this)));
         LinearLayoutManager LLM = new LinearLayoutManager(this);
