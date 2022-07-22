@@ -17,21 +17,16 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:id="@+id/llLocation"
             android:layout_marginBottom="10dp">
             <TextView
                 android:id="@+id/tvLocation"
-                android:layout_width="wrap_content"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:text="Nhà"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 android:drawableLeft="@drawable/ic_location"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" >"
-                android:textSize="18sp"
-                android:textStyle="bold"/>
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -46,7 +41,7 @@
             </RelativeLayout>
         </LinearLayout>
         <TextView
-            android:id="@+id/swUserSearch"
+            android:id="@+id/swFoodSearch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/shape_searchtool"
