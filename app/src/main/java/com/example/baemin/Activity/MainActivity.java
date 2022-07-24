@@ -90,7 +90,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         /*add_to_rvResList();
         add_to_rvFoodList();*/
-        llLocation = findViewById(R.id.llLocation);
         gifLoading = findViewById(R.id.gifLoading);
         Glide.with(this).load(R.drawable.loading).into(new DrawableImageViewTarget(gifLoading));
         llLoading = findViewById(R.id.llLoading);
@@ -169,7 +168,7 @@ public class MainActivity extends AppCompatActivity {
         });
         askPermission();
 
-        llLocation.setOnClickListener(new View.OnClickListener() {
+        tvLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 final Intent intent = new Intent(MainActivity.this, AddressForResultActivity.class);
@@ -242,6 +241,12 @@ public class MainActivity extends AppCompatActivity {
                 tvLocation.setText(location);
                 ClientDao clientDao = new ClientDao();
                 clientDao.UpdateAddress(token,phone,location,MainActivity.this);
+                SharedPreferences sharedPref;
+                SharedPreferences.Editor editor;
+                sharedPref = getSharedPreferences("Client", Context.MODE_PRIVATE);
+                editor = sharedPref.edit();
+                editor.putString("KEY_ADDRESS", location);
+                editor.commit();
             } else {
                 // DetailActivity không thành công, không có data trả về.
             }
@@ -268,6 +273,12 @@ public class MainActivity extends AppCompatActivity {
                 tvLocation.setText(resultData.getString(Constants.RESULT_DATA_KEY));
                 ClientDao clientDao = new ClientDao();
                 clientDao.UpdateAddress(token,phone,resultData.getString(Constants.RESULT_DATA_KEY),MainActivity.this);
+                SharedPreferences sharedPref;
+                SharedPreferences.Editor editor;
+                sharedPref = getSharedPreferences("Client", Context.MODE_PRIVATE);
+                editor = sharedPref.edit();
+                editor.putString("KEY_ADDRESS", resultData.getString(Constants.RESULT_DATA_KEY));
+                editor.commit();
             }else
                 Toast.makeText(MainActivity.this,"J z cha",Toast.LENGTH_SHORT).show();
         }

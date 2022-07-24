@@ -5,9 +5,13 @@ import com.example.baemin.Model.Client;
 import com.example.baemin.Model.Food;
 import com.example.baemin.Model.PlaceApiModels.AddressResult;
 import com.example.baemin.Model.Message;
+import com.example.baemin.Model.Receipt;
+import com.example.baemin.Model.ReceiptAndDetail;
+import com.example.baemin.Model.ReceiptDetail;
 import com.example.baemin.Model.Token;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import io.reactivex.Observable;
 
@@ -36,4 +40,7 @@ public interface ServiceAPI {
     Observable<ArrayList<Food>> GetFood(@Header("Authorization") String token,@Query("idType") int idType);
     @GET("api/get-category") 
     Observable<ArrayList<Category>> GetCategory(@Header("Authorization") String token);
+
+    @POST("api/create-receipt")
+    Observable<Message> CreateReceipt(@Header("Authorization") String token,@Body ReceiptAndDetail receiptAndDetail);
 }

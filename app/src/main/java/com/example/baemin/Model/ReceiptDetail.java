@@ -1,9 +1,9 @@
 package com.example.baemin.Model;
 
 public class ReceiptDetail {
-    private int idFood, idReceipt, quantity, price;
-
-    public ReceiptDetail(int idFood, int idReceipt, int quantity, int price) {
+    private int idFood, quantity, price;
+    private String idReceipt;
+    public ReceiptDetail(int idFood, String idReceipt, int quantity, int price) {
         this.idFood = idFood;
         this.idReceipt = idReceipt;
         this.quantity = quantity;
@@ -18,11 +18,11 @@ public class ReceiptDetail {
         this.idFood = idFood;
     }
 
-    public int getIdReceipt() {
+    public String getIdReceipt() {
         return idReceipt;
     }
 
-    public void setIdReceipt(int idReceipt) {
+    public void setIdReceipt(String idReceipt) {
         this.idReceipt = idReceipt;
     }
 

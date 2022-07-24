@@ -73,16 +73,14 @@
             android:name=".Activity.MainActivity"
             android:exported="true" />
         <activity
-<<<<<<< HEAD
             android:name=".Activity.WelcomeActivity"
             android:exported="false" />
 
         <service android:name=".Services.FetchAddressIntent" />
-=======
+        <activity
             android:name=".Activity.ReceiptActivity"
             android:exported="true" />
-        <activity android:name=".Activity.WelcomeActivity" />
->>>>>>> upstream/master
+
     </application>
 
 </manifest>

@@ -63,4 +63,10 @@ public class CartDao implements ICart {
                 ,MasjoheunSQLite.KEY_FOOD_ID+"=?"
                 ,new String[]{cart.getIdFood()+""});
     }
+
+    @Override
+    public void DeleteAll(Context context, MasjoheunSQLite db) {
+        SQLiteDatabase sqLiteDatabase = db.getReadableDatabase();
+        sqLiteDatabase.execSQL("delete from "+MasjoheunSQLite.TABLE_RECEIPT_DETAIL);
+    }
 }
