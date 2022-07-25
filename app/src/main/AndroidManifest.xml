@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Baemin">
-        <activity android:name=".Activity.ClientActivity"></activity>
+        <activity android:name=".Activity.Client_Info_Activity"></activity>
+        <activity android:name=".Activity.Client_Transaction_Activity" />
+        <activity android:name=".Activity.ClientActivity" />
         <activity
             android:name=".Activity.IfAccountExistActivity"
             android:exported="false"
