@@ -88,14 +88,14 @@ public class ReceiptActivity extends AppCompatActivity {
         SharedPreferences sharedPref;
         sharedPref = getSharedPreferences("Client", Context.MODE_PRIVATE);
         String phone=sharedPref.getString("KEY_PHONE", null);
-        String token=sharedPref.getString("K" +
-                "EY_TOKEN", null);
+        String token=sharedPref.getString("KEY_TOKEN", null);
+        String address=sharedPref.getString("KEY_ADDRESS", null);
         ReceiptDao receiptDao = new ReceiptDao();
         String id=receiptDao.GenerateId(phone);
         String note = edtNote.getText()+"";
         ReceiptDetailDao receiptDetailDao = new ReceiptDetailDao();
         List<ReceiptDetail> alDetails=receiptDetailDao.Read(this,new MasjoheunSQLite(this));
-        Receipt receipt = new Receipt(id,TotalPrice,null,note,null,1,phone,null);
+        Receipt receipt = new Receipt(id,TotalPrice,null,note,null,1,phone,null,address);
         Log.i("LOG", new Gson().toJson(new ReceiptAndDetail(receipt,alDetails)));
         receiptDao.Create(this,token,new ReceiptAndDetail(receipt,alDetails));
         CartDao cartDao = new CartDao();
