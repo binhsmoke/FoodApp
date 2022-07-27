@@ -12,4 +12,5 @@ public interface ICart {
     ArrayList<Cart> Read(Context context, MasjoheunSQLite db);
     void Update(Context context, MasjoheunSQLite db, Cart cart);
     void Delete(Context context, MasjoheunSQLite db, Cart cart);
+    void DeleteAll(Context context, MasjoheunSQLite db);
 }

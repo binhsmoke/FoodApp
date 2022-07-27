@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Baemin</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="api_key">AIzaSyDhTN68dnFV0D-0eGC-lVqTuWaeNE_aWBo</string>
+    <string name="hcmc_location_key">10.810583,106.709145</string>
+    <string name="radius_key">500</string>
+    <string name="components">country:VNM</string>
 </resources>

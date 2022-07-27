@@ -27,7 +27,7 @@ public class CartActivity extends AppCompatActivity {
 
     RecyclerView rvCart;
     CartAdapter adapterCart;
-    TextView tvTotalCartQuantity, tvTotalPrice;
+    TextView tvTotalCartQuantity, tvTotalPrice, tvCartDel;
     // binh: chuyen sang trang thanh toan
     TextView tvGotoReceipt;
     Handler handler;
@@ -37,6 +37,7 @@ public class CartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cart);
         rvCart = findViewById(R.id.cart_rv);
+        tvCartDel = findViewById(R.id.cart_del);
         tvTotalCartQuantity=findViewById(R.id.tvTotalCartQuantity);
         tvTotalPrice=findViewById(R.id.tvTotalCartPrice);
             //binh: chuyen sang trang thanh toan ( chua get du lieu )
@@ -44,7 +45,8 @@ public class CartActivity extends AppCompatActivity {
         tvGotoReceipt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(CartActivity.this, ReceiptActivity.class));
+                startActivity(new Intent(CartActivity.this, ReceiptActivity.class).setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY));
+                finish();
             }
         });
         CartDao cartDao = new CartDao();
@@ -69,6 +71,13 @@ public class CartActivity extends AppCompatActivity {
             }
         };
         this.runOnUiThread(runnable);
+
+        tvCartDel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cartDao.DeleteAll(CartActivity.this,new MasjoheunSQLite(CartActivity.this));
+            }
+        });
    }
 
     @Override
@@ -76,18 +85,5 @@ public class CartActivity extends AppCompatActivity {
         super.onDestroy();
         handler.removeCallbacks(runnable);
     }
-
-    /*private IClick_Item iClick() {
-        return new IClick_Item() {
-            @Override
-            public void onClickCartItem(FoodModel foodModel) {
-                Intent i = new Intent(CartActivity.this, DetailActivity.class);
-                Bundle b = new Bundle();
-                b.putSerializable("my_food", foodModel);
-                i.putExtras(b);
-                startActivity(i);
-            }
-        };
-    }*/
 
 }

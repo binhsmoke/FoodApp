@@ -158,4 +158,39 @@ public class ClientDao implements IClient {
                     public void onComplete() {}
                 });
     }
+
+    @Override
+    public void UpdateAddress(String token, String phone, String address, Context context) {
+        requestInterface.UpdateAddress(token,phone,address)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .unsubscribeOn(Schedulers.io())
+                .subscribe(new Observer<Message>() {
+                    @Override
+                    public void onSubscribe( Disposable d) {
+
+                    }
+                    @Override
+                    public void onNext( Message message) {
+                    }
+                    @Override
+
+                    public void onError(Throwable e) {
+                        e.printStackTrace();
+                        Log.e("AAA","LOI NE");
+                        if(e instanceof java.net.UnknownHostException){
+                            Toast.makeText(context,"Không có kết nối",Toast.LENGTH_SHORT).show();
+                        }else
+                        if(((HttpException) e).code()==400){
+                            Intent intent=new Intent(context, IfAccountNotExistActivity.class).setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                            Bundle bundle = new Bundle();
+                            bundle.putString("KEY_PHONE",phone);
+                            intent.putExtras(bundle);
+                            context.startActivity(intent);
+                        }
+                    }
+                    @Override
+                    public void onComplete() {}
+                });
+    }
 }

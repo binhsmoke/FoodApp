@@ -9,4 +9,5 @@ public interface IClient {
     void CheckClient(String phone, Context context);
     void ChangePassword();
     void Login(String phone, String password, Context context);
+    void UpdateAddress(String token, String phone, String address, Context context);
 }
