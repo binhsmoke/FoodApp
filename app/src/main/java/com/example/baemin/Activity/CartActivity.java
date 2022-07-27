@@ -77,17 +77,5 @@ public class CartActivity extends AppCompatActivity {
         handler.removeCallbacks(runnable);
     }
 
-    /*private IClick_Item iClick() {
-        return new IClick_Item() {
-            @Override
-            public void onClickCartItem(FoodModel foodModel) {
-                Intent i = new Intent(CartActivity.this, DetailActivity.class);
-                Bundle b = new Bundle();
-                b.putSerializable("my_food", foodModel);
-                i.putExtras(b);
-                startActivity(i);
-            }
-        };
-    }*/
 
 }
