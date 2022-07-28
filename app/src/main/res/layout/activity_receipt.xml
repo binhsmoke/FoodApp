@@ -1,223 +1,229 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:weightSum="10"
     tools:context=".Activity.ReceiptActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight=".1"
+        android:layout_weight="0.5"
         android:background="@color/white"
         android:gravity="center"
         android:orientation="horizontal"
-        android:padding="12dp">
+        android:padding="6dp">
 
         <ImageView
-            android:id="@+id/cart_cancel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_baseline_arrow_back_24_black"
-            />
-
-        <TextView
+            android:id="@+id/CartCancel"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="0.5"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_baseline_arrow_back_24_black" />
+
+        <TextView
+            android:id="@+id/tvCategoryName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
             android:gravity="center_horizontal"
             android:text="Trang thanh toán"
-            android:textSize="16sp"
             android:textColor="@color/black"
+            android:textSize="16sp"
+
             android:textStyle="bold" />
 
-
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5" />
     </LinearLayout>
-    <ScrollView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@color/silver"
-        >
+        android:layout_weight="8.5"
+        android:orientation="vertical"
+        android:weightSum="10">
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            >
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:orientation="vertical"
+            android:layout_height="0dp"
+            android:layout_weight="1.5"
             android:background="@color/white"
-            android:paddingLeft="40dp"
+            android:orientation="vertical"
             android:padding="12dp"
-            >
+            android:paddingLeft="40dp">
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="20dp"
                 android:orientation="horizontal">
+
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight=".9"
-                    android:text="Giao bởi tài xế"
-                    android:textSize="12sp"
-                    android:fontFamily="serif"/>
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight=".2"
-                    android:text="Thay đổi"
-                    android:textColor="@color/lightcyan"
-                    android:textAlignment="viewEnd"
-                    android:textSize="12sp"
-                    android:textStyle="bold"
-                    />
+                    android:text="Giao hàng đến địa chỉ"
+                    android:textSize="12sp" />
 
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:orientation="horizontal"
-                android:layout_marginTop="4dp">
-                <TextView
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
+                <androidx.core.widget.NestedScrollView
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
                     android:layout_weight=".9"
-                    android:text="80 Đoàn Văn Bơ Phường 9 Quận 4"
-                    android:fontFamily="serif"
-                    android:textSize="28sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"
-                    />
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/tvAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:fontFamily="@font/baemin"
+                        android:text="80 Đoàn Văn Bơ Phường 9 Quận 4"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </androidx.core.widget.NestedScrollView>
                 <ImageView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight=".2"
-                    android:textColor="@color/lightcyan"
-                    android:textAlignment="viewEnd"
-                    android:src="@drawable/ic_baseline_navigate_next_24"
                     android:scaleType="fitCenter"
-                    />
+                    android:src="@drawable/ic_baseline_navigate_next_24"
+                    android:textAlignment="viewEnd"
+                    android:textColor="@color/lightcyan" />
             </LinearLayout>
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Lời nhắn cho tài xế"
-                android:textSize="14sp"
-                android:background="@android:color/transparent"
-                />
         </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:background="@color/white"
+            android:paddingLeft="12dp"
+            android:text="Đơn hàng của bạn" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/receipt_rv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@color/white" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="1dp"
+            android:id="@+id/edtNote"
+            android:background="@color/white"
+            android:drawableLeft="@drawable/ic_baseline_note"
+            android:drawablePadding="12dp"
+            android:hint="Bạn có muốn nhắn gì đến cửa hàng không?"
+            android:paddingHorizontal="12dp"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.75"
+            android:layout_marginTop="1dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Đơn hàng của bạn"
-                android:background="@color/white"
-                android:paddingLeft="12dp"
-                />
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:id="@+id/receipt_rv"
-                />
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:layout_marginTop="1dp"
-                android:hint="Bạn có muốn nhắn gì đến cửa hàng không?"
-                android:drawableLeft="@drawable/ic_baseline_note"
-                android:background="@color/white"
-                android:drawablePadding="12dp"
-                android:paddingHorizontal="12dp"
-                android:textSize="16sp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".3"
+                android:text="Tạm tính"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tvQuantity"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".15"
+                android:textStyle="bold"
+                android:text="3 món"
+                android:textColor="@color/black"
+                android:textSize="12sp"
                 />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@color/white"
-                android:layout_marginTop="1dp"
-                android:padding="12dp"
-                >
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight=".3"
-                    android:text="Tạm tính"
-                    android:textSize="12sp"
-                    android:textColor="@color/black"
-                    android:fontFamily="serif"/>
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight=".15"
-                    android:text="3 món"
-                    android:textSize="12sp"
-                    android:textColor="@color/black"
-                    android:fontFamily="serif"/>
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight=".2"
-                    android:text="150.000đ"
-                    android:textAlignment="viewEnd"
-                    android:textColor="@color/black"
-                    android:textSize="12sp"
-                    />
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:background="@color/white"
-                android:padding="12dp"
-                >
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight=".3"
-                    android:text="Phí áp dụng"
-                    android:textSize="12sp"
-                    android:textColor="@color/black"
-                    android:fontFamily="serif"/>
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight=".15"
-                    android:text="1.5 km"
-                    android:textStyle="bold"
-                    android:textSize="12sp"
-                    android:textColor="@color/black"
-                    android:fontFamily="serif"/>
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight=".2"
-                    android:text="30.000đ"
-                    android:textAlignment="viewEnd"
-                    android:textColor="@color/black"
-                    android:textSize="12sp"
-                    />
-
-            </LinearLayout>
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="24dp"
-                android:id="@+id/receipt_voucher_rv"
-                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".2"
+                android:text="150.000đ"
+                android:id="@+id/tvPrice"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
         </LinearLayout>
-    </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.75"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".3"
+                android:text="Phí giao hàng áp dụng"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".15"
+                android:text="TP.HCM"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".2"
+                android:text="15.000đ"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/receipt_voucher_rv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:text="VOUNCHER NE"
+            android:textColor="@color/black"
+            android:layout_margin="10dp" />
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_gravity="bottom"
-        android:layout_weight=".2"
+        android:layout_weight="1.0"
         android:background="@color/white"
         android:gravity="center"
         android:orientation="horizontal">
@@ -225,7 +231,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="16dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:orientation="horizontal"
             android:padding="8dp">
 
@@ -235,27 +242,32 @@
                 android:layout_weight=".3"
                 android:gravity="center_vertical"
                 android:text="100.000 vnd"
-                android:textStyle="bold"
+                android:id="@+id/tvTotal"
                 android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight=".6"
+                android:background="@drawable/focus_button"
                 android:gravity="center"
+<<<<<<< HEAD
+                android:id="@+id/btnCharge"
+                android:text="Đặt hàng"
+=======
+>>>>>>> upstream/master
                 android:textAlignment="center"
                 android:text="Đặt hàng"
                 android:textColor="@color/white"
+<<<<<<< HEAD
+=======
                 android:background="@drawable/focus_button"
                 android:layout_marginLeft="16dp"
+>>>>>>> upstream/master
                 android:textSize="16sp" />
 
-
-
         </LinearLayout>
-
-
-
     </LinearLayout>
 </LinearLayout>
