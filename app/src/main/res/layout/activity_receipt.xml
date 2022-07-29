@@ -253,10 +253,19 @@
                 android:layout_weight=".6"
                 android:background="@drawable/focus_button"
                 android:gravity="center"
+<<<<<<< HEAD
                 android:id="@+id/btnCharge"
                 android:text="Đặt hàng"
+=======
+>>>>>>> upstream/master
                 android:textAlignment="center"
+                android:text="Đặt hàng"
                 android:textColor="@color/white"
+<<<<<<< HEAD
+=======
+                android:background="@drawable/focus_button"
+                android:layout_marginLeft="16dp"
+>>>>>>> upstream/master
                 android:textSize="16sp" />
 
         </LinearLayout>

@@ -14,7 +14,7 @@
         android:layout_height="195dp"
         android:layout_margin="4dp"
         android:background="@drawable/shape_item_category"
-        android:src="@drawable/cat1" />
+        android:src="@drawable/ic_vietflag" />
 
     <TextView
         android:id="@+id/cat_tv"
