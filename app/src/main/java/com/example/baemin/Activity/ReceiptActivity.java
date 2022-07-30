@@ -88,8 +88,8 @@ public class ReceiptActivity extends AppCompatActivity {
         SharedPreferences sharedPref;
         sharedPref = getSharedPreferences("Client", Context.MODE_PRIVATE);
         String phone=sharedPref.getString("KEY_PHONE", null);
-        String token=sharedPref.getString("KEY_TOKEN", null);
-        String address=sharedPref.getString("KEY_ADDRESS", null);
+        String token=sharedPref.getString("K" +
+                "EY_TOKEN", null);
         ReceiptDao receiptDao = new ReceiptDao();
         String id=receiptDao.GenerateId(phone);
         String note = edtNote.getText()+"";

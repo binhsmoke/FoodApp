@@ -166,7 +166,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight=".2"
                 android:text="150.000đ"
-                android:id="@+id/tvFPrice"
+                android:id="@+id/tvPrice"
                 android:textAlignment="viewEnd"
                 android:textColor="@color/black"
                 android:textSize="12sp" />
@@ -255,6 +255,11 @@
                 android:id="@+id/btnCharge"
                 android:text="Đặt hàng"
                 android:textAlignment="center"
+                android:textColor="@color/white"
+                android:background="@drawable/focus_button"
+                android:gravity="center"
+                android:textAlignment="center"
+                android:text="Đặt hàng"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
 
