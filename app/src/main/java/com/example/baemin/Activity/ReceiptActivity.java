@@ -55,7 +55,7 @@ public class ReceiptActivity extends AppCompatActivity {
         rcvReceipt = findViewById(R.id.receipt_rv);
         tvQuantity = findViewById(R.id.tvQuantity);
         tvTotal = findViewById(R.id.tvTotal);
-        tvPrice = findViewById(R.id.tvPrice);
+        tvPrice = findViewById(R.id.tvFPrice);
         edtNote=findViewById(R.id.edtNote);
         btnCharge = findViewById(R.id.btnCharge);
         SharedPreferences sharedPref;
@@ -95,7 +95,7 @@ public class ReceiptActivity extends AppCompatActivity {
         String note = edtNote.getText()+"";
         ReceiptDetailDao receiptDetailDao = new ReceiptDetailDao();
         List<ReceiptDetail> alDetails=receiptDetailDao.Read(this,new MasjoheunSQLite(this));
-        Receipt receipt = new Receipt(id,TotalPrice,null,note,null,1,phone,null,address);
+        Receipt receipt = new Receipt(id,TotalPrice,null,note,null,address,1,phone,null);
         Log.i("LOG", new Gson().toJson(new ReceiptAndDetail(receipt,alDetails)));
         receiptDao.Create(this,token,new ReceiptAndDetail(receipt,alDetails));
         CartDao cartDao = new CartDao();

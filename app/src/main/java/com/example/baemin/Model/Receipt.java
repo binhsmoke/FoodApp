@@ -8,21 +8,21 @@ public class Receipt {
     private String dateTime;
     private String note;
     private String isAccepted;
+    private String deliveryAddress;
     private int idRestaurant;
     private String phoneClient;
     private String idVouncher;
-    private String DeliveryAddress;
 
-    public Receipt(String id, int total, String dateTime, String note, String isAccepted, int idRestaurant, String phoneClient, String idVouncher, String deliveryAddress) {
+    public Receipt(String id, int total, String dateTime, String note, String isAccepted, String deliveryAddress, int idRestaurant, String phoneClient, String idVouncher) {
         this.id = id;
         this.total = total;
         this.dateTime = dateTime;
         this.note = note;
         this.isAccepted = isAccepted;
+        this.deliveryAddress = deliveryAddress;
         this.idRestaurant = idRestaurant;
         this.phoneClient = phoneClient;
         this.idVouncher = idVouncher;
-        DeliveryAddress = deliveryAddress;
     }
 
     public String getId() {
@@ -65,6 +65,14 @@ public class Receipt {
         this.isAccepted = isAccepted;
     }
 
+    public String getDeliveryAddress() {
+        return deliveryAddress;
+    }
+
+    public void setDeliveryAddress(String deliveryAddress) {
+        this.deliveryAddress = deliveryAddress;
+    }
+
     public int getIdRestaurant() {
         return idRestaurant;
     }
@@ -87,13 +95,5 @@ public class Receipt {
 
     public void setIdVouncher(String idVouncher) {
         this.idVouncher = idVouncher;
-    }
-
-    public String getDeliveryAddress() {
-        return DeliveryAddress;
-    }
-
-    public void setDeliveryAddress(String deliveryAddress) {
-        DeliveryAddress = deliveryAddress;
     }
 }

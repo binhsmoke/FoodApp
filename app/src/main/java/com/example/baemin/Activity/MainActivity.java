@@ -8,7 +8,9 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.LinearSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.SnapHelper;
 
 import android.Manifest;
 import android.app.Activity;
@@ -29,12 +31,14 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.DrawableImageViewTarget;
+import com.example.baemin.Adapter.BannerAdapter;
 import com.example.baemin.Adapter.CategoriesAdapter;
 import com.example.baemin.DAO.CartDao;
 import com.example.baemin.DAO.CategoryDao;
 import com.example.baemin.DAO.ClientDao;
 import com.example.baemin.Helpers.MasjoheunSQLite;
 import com.example.baemin.Listener.RecyclerItemClickListener;
+import com.example.baemin.Model.Banner;
 import com.example.baemin.Model.Cart;
 import com.example.baemin.Model.Category;
 import com.example.baemin.Model.Constants;
@@ -63,6 +67,8 @@ import org.json.JSONObject;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -84,6 +90,11 @@ public class MainActivity extends AppCompatActivity {
     TextView tvLocation;
     AddressResultReceiver addressResultReceiver;
     LinearLayout llLocation;
+    RecyclerView rvBanner;
+    Timer timer;
+    TimerTask timerTask;
+    int bannerPosition;
+    LinearLayoutManager LBanner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -109,8 +120,11 @@ public class MainActivity extends AppCompatActivity {
 
         fabCart = findViewById(R.id.fbtCart);
         tvQuantityCart = findViewById(R.id.tvCartQuantity);
-
         clCart = findViewById(R.id.clCart);
+                //. Banner
+        rvBanner = findViewById(R.id.rvBanner);
+        initBanner();
+                //  . End Banner
         this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
@@ -119,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
                     clCart.setVisibility(View.VISIBLE);
                     tvQuantityCart.setText(alCart.size() + "");
                     fabCart.setOnClickListener(v -> setFabCart());
+
                 } else if (alCart.size() == 0)
                     clCart.setVisibility(View.GONE);
                 Handler handler = new Handler();
@@ -281,6 +296,79 @@ public class MainActivity extends AppCompatActivity {
                 editor.commit();
             }else
                 Toast.makeText(MainActivity.this,"J z cha",Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void initBanner() {
+        ArrayList<Banner> alBanner = new ArrayList<>();
+        alBanner.add(new Banner("banner1", R.drawable.app_banner__giaroi));
+        alBanner.add(new Banner("banner2", R.drawable.app_banner_2));
+        alBanner.add(new Banner("banner3", R.drawable.app_banner_3));
+        alBanner.add(new Banner("banner4", R.drawable.app_banner_4));
+        alBanner.add(new Banner("banner5", R.drawable.app_banner_5));
+        alBanner.add(new Banner("banner6", R.drawable.app_banner_6));
+        BannerAdapter ABanner = new BannerAdapter(this,alBanner);
+        LBanner = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        rvBanner.setLayoutManager(LBanner);
+        rvBanner.setAdapter(ABanner);
+        bannerPosition = Integer.MAX_VALUE/2 ;
+        rvBanner.scrollToPosition(bannerPosition);
+        SnapHelper snapHelper = new LinearSnapHelper();
+        snapHelper.attachToRecyclerView(rvBanner);
+        rvBanner.smoothScrollBy(5,0);
+        rvBanner.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+                super.onScrollStateChanged(recyclerView, newState);
+                if (newState == 0) {
+                    bannerPosition=LBanner.findFirstCompletelyVisibleItemPosition();
+                    runBanner();
+                } else if (newState == 1) {
+                    stopBanner();
+                }
+            }
+        });
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        runBanner();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        stopBanner();
+    }
+
+    private void runBanner() {
+        if (timer == null && timerTask == null) {
+            timer = new Timer();
+            timerTask = new TimerTask() {
+                @Override
+                public void run() {
+                    if (bannerPosition == Integer.MAX_VALUE) {
+                        bannerPosition = Integer.MAX_VALUE / 2;
+                        rvBanner.scrollToPosition(bannerPosition);
+                        rvBanner.smoothScrollBy(5, 0);
+                    } else {
+                        bannerPosition++;
+                        rvBanner.smoothScrollToPosition(bannerPosition);
+                    }
+                }
+            };
+            timer.schedule(timerTask,3000,3000);
+        }
+    }
+
+    private void stopBanner() {
+        if (timer != null && timerTask != null) {
+            timer.cancel();
+            timerTask.cancel();
+            timer = null;
+            timerTask = null;
+            bannerPosition= LBanner.findFirstCompletelyVisibleItemPosition();
         }
     }
 }
