@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.example.baemin.R;
 
-public class ClientActivity extends AppCompatActivity {
+public class Client_Info_ChangePWD_Activity extends AppCompatActivity {
     TextView tvMyTransaction;
     TextView tvClientName;
     @Override
@@ -25,7 +25,7 @@ public class ClientActivity extends AppCompatActivity {
         tvMyTransaction.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ClientActivity.this,Client_Transaction_Activity.class));
+                startActivity(new Intent(Client_Info_ChangePWD_Activity.this,Client_Transaction_Activity.class));
             }
         });
     }

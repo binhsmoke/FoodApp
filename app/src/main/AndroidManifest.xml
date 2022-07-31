@@ -44,7 +44,7 @@
             android:name=".Activity.Client_Transaction_Activity"
             android:exported="false" />
         <activity
-            android:name=".Activity.ClientActivity"
+            android:name=".Activity.Client_Info_ChangePWD_Activity"
             android:exported="false" />
         <activity
             android:name=".Activity.IfAccountExistActivity"
