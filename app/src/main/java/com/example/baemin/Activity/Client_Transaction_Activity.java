@@ -28,6 +28,10 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
@@ -45,6 +49,14 @@ public class Client_Transaction_Activity extends AppCompatActivity {
     ArrayList<Receipt> alReceipt;
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (!EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().register(this);
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,7 +87,7 @@ public class Client_Transaction_Activity extends AppCompatActivity {
                     handler.postDelayed(this, 200);
             }
         });
-        Handler handler1 = new Handler();
+        /*Handler handler1 = new Handler();
         Client_Transaction_Activity.this.runOnUiThread(new Runnable() {
             @SuppressLint("NotifyDataSetChanged")
             @Override
@@ -96,7 +108,19 @@ public class Client_Transaction_Activity extends AppCompatActivity {
                 }
                 handler1.postDelayed(this, 200);
             }
-        });
+          });*/
     }
-
+    @SuppressLint("NotifyDataSetChanged")
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEvent(Receipt receipt) {
+        alReceipt.add(0, receipt);
+        client_transaction_adapter.notifyDataSetChanged();
+        Toast.makeText(this, "Đặt hàng thành công!", Toast.LENGTH_SHORT).show();
+        // do something
+    };
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);
+    }
 }

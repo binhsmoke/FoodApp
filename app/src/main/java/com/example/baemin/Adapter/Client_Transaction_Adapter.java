@@ -67,7 +67,7 @@ public class Client_Transaction_Adapter extends RecyclerView.Adapter<Client_Tran
         holder.tvPrice.setText(alReceipt.get(position).getTotal()+"đ");
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
-        SimpleDateFormat output = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat output = new SimpleDateFormat("'ngày 'dd',' 'tháng' MM', năm 'yyyy");
         Date d = null;
         try {
             d = sdf.parse(alReceipt.get(position).getCreateDate());

@@ -28,6 +28,8 @@ import com.example.baemin.R;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 import org.w3c.dom.Text;
 
 import java.time.LocalDateTime;
@@ -46,6 +48,8 @@ public class ReceiptActivity extends AppCompatActivity {
     private int TotalPrice;
     private EditText edtNote;
     private TextView btnCharge;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -105,8 +109,12 @@ public class ReceiptActivity extends AppCompatActivity {
         editor.apply();
         Log.i("LOG", new Gson().toJson(new ReceiptAndDetail(receipt,alDetails)));
         receiptDao.Create(this,token,new ReceiptAndDetail(receipt,alDetails));
+
+        EventBus.getDefault().post(receipt);
+
         CartDao cartDao = new CartDao();
         cartDao.DeleteAll(this,new MasjoheunSQLite(this));
         finish();
     }
+
 }
