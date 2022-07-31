@@ -90,21 +90,22 @@
                     <LinearLayout
                         android:id="@+id/constraintLayout"
                         android:layout_width="match_parent"
-                        android:layout_height="260dp"
+                        android:layout_height="200dp"
                         android:orientation="vertical"
                         >
-                        <!--<androidx.recyclerview.widget.RecyclerView
+                        <androidx.recyclerview.widget.RecyclerView
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/rcvEvent"
-                            />-->
-                        <ImageView
+                            android:layout_height="match_parent"
+                            android:id="@+id/rvBanner"
+                            android:background="@color/white"
+                            />
+                        <!--<ImageView
                             android:background="@color/white"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:src="@drawable/app_banner__giaroi"
 
-                            />
+                            />-->
                     </LinearLayout>
                 </com.google.android.material.appbar.CollapsingToolbarLayout>
             </com.google.android.material.appbar.AppBarLayout>
@@ -113,7 +114,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
-
                 <include layout="@layout/layout_menu"/>
             </androidx.core.widget.NestedScrollView>
         </androidx.coordinatorlayout.widget.CoordinatorLayout>
@@ -143,8 +143,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:src="@drawable/ic_baseline_shopping_cart_24"
-                    app:rippleColor="@color/white"
+                    android:src="@drawable/cart_icon"
+                    app:backgroundTint="@color/lightcyan"
                     />
 
                 <TextView
@@ -164,5 +164,7 @@
                     app:layout_constraintEnd_toEndOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </RelativeLayout>
+
+
     </FrameLayout>
 </LinearLayout>

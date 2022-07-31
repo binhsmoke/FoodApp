@@ -25,6 +25,7 @@ import java.util.concurrent.CancellationException;
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder> {
 
 
+
 /*private List<FoodModel> mList;
     private IClick_Item iClickItem;
     */
