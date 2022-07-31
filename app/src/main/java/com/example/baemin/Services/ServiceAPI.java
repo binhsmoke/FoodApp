@@ -1,5 +1,6 @@
 package com.example.baemin.Services;
 
+import com.example.baemin.Model.Cart;
 import com.example.baemin.Model.Category;
 import com.example.baemin.Model.Client;
 import com.example.baemin.Model.Food;
@@ -43,4 +44,8 @@ public interface ServiceAPI {
 
     @POST("api/create-receipt")
     Observable<Message> CreateReceipt(@Header("Authorization") String token,@Body ReceiptAndDetail receiptAndDetail);
+    @GET("api/get-receipt")
+    Observable<ArrayList<Receipt>> GetReceipt(@Header("Authorization") String token,@Query("phone") String phone);
+    @GET("api/get-receipt-detail")
+    Observable<ArrayList<Cart>> GetReceiptDetail(@Header("Authorization") String token, @Query("id") String id);
 }

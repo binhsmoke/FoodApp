@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.example.baemin.Helpers.MasjoheunSQLite;
 import com.example.baemin.Model.Cart;
+import com.example.baemin.Model.ReceiptDetail;
 
 import java.util.ArrayList;
 
@@ -13,4 +14,5 @@ public interface ICart {
     void Update(Context context, MasjoheunSQLite db, Cart cart);
     void Delete(Context context, MasjoheunSQLite db, Cart cart);
     void DeleteAll(Context context, MasjoheunSQLite db);
+    void ReOrder(Context context, MasjoheunSQLite db, ArrayList<Cart> alCart);
 }

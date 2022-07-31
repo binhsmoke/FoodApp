@@ -13,7 +13,6 @@ public class MasjoheunSQLite extends SQLiteOpenHelper {
 
     public static final String TABLE_RECEIPT_DETAIL="RecepitDetail";
     public static final String KEY_FOOD_ID="ID_Food";
-    public static final String KEY_IMAGE="Image";
     public static final String KEY_QUANTITY="Quantity";
     public static final String KEY_PRICE="Price";
     public static final String KEY_NAME="Name";
@@ -29,7 +28,6 @@ public class MasjoheunSQLite extends SQLiteOpenHelper {
                 +KEY_FOOD_ID+" integer " +","
                 +KEY_QUANTITY+" integer "+","
                 +KEY_PRICE+" integer "+","
-                +KEY_IMAGE+" text "+","
                 +KEY_NAME+" text "+","
                 +"primary key"+"("+KEY_FOOD_ID+")"+")";
         db.execSQL(create);

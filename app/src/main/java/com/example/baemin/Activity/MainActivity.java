@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
     private FusedLocationProviderClient fusedLocationClient;
     TextView tvLocation;
     AddressResultReceiver addressResultReceiver;
-    LinearLayout llLocation;
+    ImageView  btnMenu;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -94,6 +94,15 @@ public class MainActivity extends AppCompatActivity {
         Glide.with(this).load(R.drawable.loading).into(new DrawableImageViewTarget(gifLoading));
         llLoading = findViewById(R.id.llLoading);
         rcvCategory = findViewById(R.id.rcvCategory);
+
+        btnMenu = findViewById(R.id.icMenu);
+        btnMenu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,ClientActivity.class));
+            }
+        });
+
         mHandler = new Handler();
 
         tvLocation = findViewById(R.id.tvLocation);
@@ -167,7 +176,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         askPermission();
-
         tvLocation.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

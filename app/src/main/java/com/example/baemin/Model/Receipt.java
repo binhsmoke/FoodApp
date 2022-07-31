@@ -5,17 +5,17 @@ import java.sql.Date;
 public class Receipt {
     private String id;
     private int total;
-    private String dateTime;
+    private String createDate;
     private String note;
     private String isAccepted;
     private int idRestaurant;
     private String phoneClient;
     private String idVouncher;
 
-    public Receipt(String id, int total, String dateTime, String note, String isAccepted, int idRestaurant, String phoneClient, String idVouncher) {
+    public Receipt(String id, int total, String createDate, String note, String isAccepted, int idRestaurant, String phoneClient, String idVouncher) {
         this.id = id;
         this.total = total;
-        this.dateTime = dateTime;
+        this.createDate = createDate;
         this.note = note;
         this.isAccepted = isAccepted;
         this.idRestaurant = idRestaurant;
@@ -39,12 +39,12 @@ public class Receipt {
         this.total = total;
     }
 
-    public String getDateTime() {
-        return dateTime;
+    public String getCreateDate() {
+        return createDate;
     }
 
-    public void setDateTime(String dateTime) {
-        this.dateTime = dateTime;
+    public void setCreateDate(String createDate) {
+        this.createDate = createDate;
     }
 
     public String getNote() {

@@ -31,6 +31,7 @@ import com.google.gson.GsonBuilder;
 import org.w3c.dom.Text;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.sql.Date;
 import java.util.List;
@@ -95,7 +96,13 @@ public class ReceiptActivity extends AppCompatActivity {
         String note = edtNote.getText()+"";
         ReceiptDetailDao receiptDetailDao = new ReceiptDetailDao();
         List<ReceiptDetail> alDetails=receiptDetailDao.Read(this,new MasjoheunSQLite(this));
-        Receipt receipt = new Receipt(id,TotalPrice,null,note,null,1,phone,null);
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss");
+        LocalDateTime now = LocalDateTime.now();
+        Receipt receipt = new Receipt(id,TotalPrice,dtf.format(now),note,"wait",1,phone,null);
+        sharedPref = getSharedPreferences("NEW_ORDER",MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("KEY_ORDER",new Gson().toJson(receipt));
+        editor.apply();
         Log.i("LOG", new Gson().toJson(new ReceiptAndDetail(receipt,alDetails)));
         receiptDao.Create(this,token,new ReceiptAndDetail(receipt,alDetails));
         CartDao cartDao = new CartDao();

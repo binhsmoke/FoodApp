@@ -74,7 +74,7 @@ public class DetailActivity extends AppCompatActivity {
     private void setLlButtonAdd(){
         MasjoheunSQLite masjoheunSQLite = new MasjoheunSQLite(this);
         CartDao cartDao = new CartDao();
-        Cart cart = new Cart(food.getId(),quantity,price,food.getImage(),food.getNameFood());
+        Cart cart = new Cart(food.getId(),quantity,price,food.getNameFood());
         cartDao.Create(this,masjoheunSQLite,cart);
         Toast.makeText(this, "Thêm vào giỏ hàng thành công", Toast.LENGTH_SHORT).show();
         this.finish();

@@ -30,13 +30,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 >
+
                 <ImageView
+                    android:id="@+id/icMenu"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:src="@drawable/ic_menu"
-                    android:id="@+id/icMenu"
-                    />
+                    android:src="@drawable/ic_menu" />
             </RelativeLayout>
         </LinearLayout>
         <TextView
