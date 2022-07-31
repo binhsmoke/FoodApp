@@ -55,7 +55,7 @@ public class ReceiptActivity extends AppCompatActivity {
         rcvReceipt = findViewById(R.id.receipt_rv);
         tvQuantity = findViewById(R.id.tvQuantity);
         tvTotal = findViewById(R.id.tvTotal);
-        tvPrice = findViewById(R.id.tvFPrice);
+        tvPrice = findViewById(R.id.tvPrice);
         edtNote=findViewById(R.id.edtNote);
         btnCharge = findViewById(R.id.btnCharge);
         SharedPreferences sharedPref;

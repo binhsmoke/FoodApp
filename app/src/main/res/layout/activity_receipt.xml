@@ -256,11 +256,7 @@
                 android:text="Đặt hàng"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:background="@drawable/focus_button"
-                android:gravity="center"
-                android:textAlignment="center"
-                android:text="Đặt hàng"
-                android:textColor="@color/white"
+
                 android:textSize="16sp" />
 
         </LinearLayout>
