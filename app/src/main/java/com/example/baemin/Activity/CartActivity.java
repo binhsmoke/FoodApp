@@ -45,7 +45,7 @@ public class CartActivity extends AppCompatActivity {
         tvGotoReceipt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(CartActivity.this, ReceiptActivity.class).setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY));
+                startActivity(new Intent(CartActivity.this, ReceiptActivity.class));
                 finish();
             }
         });

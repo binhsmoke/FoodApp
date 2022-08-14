@@ -47,6 +47,9 @@
             android:name=".Activity.Client_Info_ChangePWD_Activity"
             android:exported="false" />
         <activity
+            android:name=".Activity.ReceiptAndDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.IfAccountExistActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
@@ -56,6 +59,9 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".Activity.FoodActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.FoodForResultActivity"
             android:exported="true" />
         <activity
             android:name=".Activity.CartActivity"

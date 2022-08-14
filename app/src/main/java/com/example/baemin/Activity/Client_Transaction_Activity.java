@@ -115,7 +115,7 @@ public class Client_Transaction_Activity extends AppCompatActivity {
     public void onEvent(Receipt receipt) {
         alReceipt.add(0, receipt);
         client_transaction_adapter.notifyDataSetChanged();
-        Toast.makeText(this, "Đặt hàng thành công!", Toast.LENGTH_SHORT).show();
+
         // do something
     };
     @Override

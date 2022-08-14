@@ -5,6 +5,7 @@ import static android.content.Context.MODE_PRIVATE;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -20,6 +21,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.baemin.Activity.Client_Transaction_Activity;
+import com.example.baemin.Activity.ReceiptAndDetailActivity;
 import com.example.baemin.DAO.CartDao;
 import com.example.baemin.Helpers.MasjoheunSQLite;
 import com.example.baemin.Model.Cart;
@@ -101,8 +103,15 @@ public class Client_Transaction_Adapter extends RecyclerView.Adapter<Client_Tran
                 }
             });
         });
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, ReceiptAndDetailActivity.class);
+                intent.putExtra("KEY_ID",alReceipt.get(position).getId());
+                mContext.startActivity(intent);
+            }
+        });
     }
-
     @Override
     public int getItemCount() {
         if (alReceipt != null) {

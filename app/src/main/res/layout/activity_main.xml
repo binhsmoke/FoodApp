@@ -40,7 +40,7 @@
             </RelativeLayout>
         </LinearLayout>
         <TextView
-            android:id="@+id/swFoodSearch"
+            android:id="@+id/tvFoodSearch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/shape_searchtool"
@@ -93,7 +93,7 @@
                         android:layout_height="200dp"
                         android:orientation="vertical"
                         >
-                        <androidx.recyclerview.widget.RecyclerView
+                        <com.example.baemin.Helpers.AutoScrollRecyclerView
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:id="@+id/rvBanner"

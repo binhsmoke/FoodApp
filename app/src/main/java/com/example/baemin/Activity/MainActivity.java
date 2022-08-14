@@ -6,17 +6,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.location.Location;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.ResultReceiver;
 import android.view.View;
 import android.widget.ImageView;
@@ -26,12 +31,15 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.DrawableImageViewTarget;
+import com.example.baemin.Adapter.BannerAdapter;
 import com.example.baemin.Adapter.CategoriesAdapter;
 import com.example.baemin.DAO.CartDao;
 import com.example.baemin.DAO.CategoryDao;
 import com.example.baemin.DAO.ClientDao;
+import com.example.baemin.Helpers.AutoScrollRecyclerView;
 import com.example.baemin.Helpers.MasjoheunSQLite;
 import com.example.baemin.Listener.RecyclerItemClickListener;
+import com.example.baemin.Model.Banner;
 import com.example.baemin.Model.Cart;
 import com.example.baemin.Model.Category;
 import com.example.baemin.Model.Constants;
@@ -40,6 +48,7 @@ import com.example.baemin.Services.FetchAddressIntent;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -49,11 +58,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
-    private RecyclerView.Adapter res_adapter, food_adapter;
-    private RecyclerView rvResList, rvFoodList;
     String jsCategory;
-    Runnable mRunnable;
     Handler mHandler;
     RecyclerView rcvCategory;
     LinearLayout llLoading;
@@ -65,9 +70,10 @@ public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_CODE_LOCATION_PERMISSION = 1;
     private static final int REQUEST_CODE_LOCATION = 1;
     private FusedLocationProviderClient fusedLocationClient;
-    TextView tvLocation;
+    TextView tvLocation, tvFoodSearch;
     AddressResultReceiver addressResultReceiver;
     ImageView  btnMenu;
+    AutoScrollRecyclerView rcvBanner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,6 +84,23 @@ public class MainActivity extends AppCompatActivity {
         Glide.with(this).load(R.drawable.loading).into(new DrawableImageViewTarget(gifLoading));
         llLoading = findViewById(R.id.llLoading);
         rcvCategory = findViewById(R.id.rcvCategory);
+        rcvBanner = findViewById(R.id.rvBanner);
+
+        tvFoodSearch = findViewById(R.id.tvFoodSearch);
+        tvFoodSearch.setOnClickListener(v-> startActivity(new Intent(this,FoodForResultActivity.class)));
+
+        ArrayList<Banner> alBanner = new ArrayList<>();
+        alBanner.add(new Banner(null,R.drawable.app_banner_2));
+        alBanner.add(new Banner(null,R.drawable.app_banner_3));
+        alBanner.add(new Banner(null,R.drawable.app_banner_4));
+        alBanner.add(new Banner(null,R.drawable.app_banner_5));
+        alBanner.add(new Banner(null,R.drawable.app_banner_6));
+        rcvBanner.setAdapter(new BannerAdapter(this,alBanner));
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL,false);
+        rcvBanner.setLayoutManager(linearLayoutManager);
+        /*rcvBanner.smoothScrollToPosition(rcvBanner.getAdapter().getItemCount());*/
+        rcvBanner.startAutoScroll();
+        rcvBanner.setLoopEnabled(true);
 
         btnMenu = findViewById(R.id.icMenu);
         btnMenu.setOnClickListener(new View.OnClickListener() {
@@ -102,7 +125,6 @@ public class MainActivity extends AppCompatActivity {
 
         fabCart = findViewById(R.id.fbtCart);
         tvQuantityCart = findViewById(R.id.tvCartQuantity);
-
         clCart = findViewById(R.id.clCart);
         this.runOnUiThread(new Runnable() {
             @Override
@@ -274,5 +296,36 @@ public class MainActivity extends AppCompatActivity {
             }else
                 Toast.makeText(MainActivity.this,"J z cha",Toast.LENGTH_SHORT).show();
         }
+    }
+    boolean doubleBackToExitPressedOnce = false;
+    @Override
+    public void onBackPressed() {
+
+        AlertDialog.Builder builder=new AlertDialog.Builder(this);
+        View create=getLayoutInflater().inflate(R.layout.layout_alert_reorder_dialog,null);
+        builder.setView(create);
+        AlertDialog WarnDialog=builder.create();
+        WarnDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        TextView tv = create.findViewById(R.id.tvContentAlert);
+        tv.setText("Hông order nữa hả?");
+        tv.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+        TextView okay=create.findViewById(R.id.btnOkay);
+        okay.setText("Hông");
+        TextView cancel=create.findViewById(R.id.btnCancel);
+        cancel.setText("Ở lại");
+        WarnDialog.show();
+        okay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+                WarnDialog.cancel();
+            }
+        });
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                WarnDialog.cancel();
+            }
+        });
     }
 }
