@@ -5,24 +5,24 @@ import java.sql.Date;
 public class Receipt {
     private String id;
     private int total;
-    private String dateTime;
+    private String createDate;
     private String note;
     private String isAccepted;
-    private String deliveryAddress;
     private int idRestaurant;
     private String phoneClient;
     private String idVouncher;
+    private String deliveryAddress;
 
-    public Receipt(String id, int total, String dateTime, String note, String isAccepted, String deliveryAddress, int idRestaurant, String phoneClient, String idVouncher) {
+    public Receipt(String id, int total, String createDate, String note, String isAccepted, int idRestaurant, String phoneClient, String idVouncher, String deliveryAddress) {
         this.id = id;
         this.total = total;
-        this.dateTime = dateTime;
+        this.createDate = createDate;
         this.note = note;
         this.isAccepted = isAccepted;
-        this.deliveryAddress = deliveryAddress;
         this.idRestaurant = idRestaurant;
         this.phoneClient = phoneClient;
         this.idVouncher = idVouncher;
+        this.deliveryAddress = deliveryAddress;
     }
 
     public String getId() {
@@ -41,12 +41,12 @@ public class Receipt {
         this.total = total;
     }
 
-    public String getDateTime() {
-        return dateTime;
+    public String getCreateDate() {
+        return createDate;
     }
 
-    public void setDateTime(String dateTime) {
-        this.dateTime = dateTime;
+    public void setCreateDate(String createDate) {
+        this.createDate = createDate;
     }
 
     public String getNote() {
@@ -63,14 +63,6 @@ public class Receipt {
 
     public void setIsAccepted(String isAccepted) {
         this.isAccepted = isAccepted;
-    }
-
-    public String getDeliveryAddress() {
-        return deliveryAddress;
-    }
-
-    public void setDeliveryAddress(String deliveryAddress) {
-        this.deliveryAddress = deliveryAddress;
     }
 
     public int getIdRestaurant() {
@@ -95,5 +87,13 @@ public class Receipt {
 
     public void setIdVouncher(String idVouncher) {
         this.idVouncher = idVouncher;
+    }
+
+    public String getDeliveryAddress() {
+        return deliveryAddress;
+    }
+
+    public void setDeliveryAddress(String deliveryAddress) {
+        this.deliveryAddress = deliveryAddress;
     }
 }

@@ -1,5 +1,6 @@
 package com.example.baemin.Services;
 
+import com.example.baemin.Model.Cart;
 import com.example.baemin.Model.Category;
 import com.example.baemin.Model.Client;
 import com.example.baemin.Model.Food;
@@ -7,6 +8,7 @@ import com.example.baemin.Model.PlaceApiModels.AddressResult;
 import com.example.baemin.Model.Message;
 import com.example.baemin.Model.Receipt;
 import com.example.baemin.Model.ReceiptAndDetail;
+import com.example.baemin.Model.ReceiptAndDetailHistory;
 import com.example.baemin.Model.ReceiptDetail;
 import com.example.baemin.Model.Token;
 
@@ -38,9 +40,17 @@ public interface ServiceAPI {
 
     @GET("api/get-food")
     Observable<ArrayList<Food>> GetFood(@Header("Authorization") String token,@Query("idType") int idType);
+    @GET("api/find-food")
+    Observable<ArrayList<Food>> FindFood(@Header("Authorization") String token,@Query("nameFood") String nameFood);
     @GET("api/get-category") 
     Observable<ArrayList<Category>> GetCategory(@Header("Authorization") String token);
 
     @POST("api/create-receipt")
     Observable<Message> CreateReceipt(@Header("Authorization") String token,@Body ReceiptAndDetail receiptAndDetail);
+    @GET("api/get-receipt")
+    Observable<ArrayList<Receipt>> GetReceipt(@Header("Authorization") String token,@Query("phone") String phone);
+    @GET("api/get-receipt-detail")
+    Observable<ArrayList<Cart>> GetReceiptDetail(@Header("Authorization") String token, @Query("id") String id);
+    @GET("api/get-receipt-and-detail")
+    Observable<ReceiptAndDetailHistory> GetReceiptAndDetail(@Header("Authorization") String token, @Query("id") String id);
 }

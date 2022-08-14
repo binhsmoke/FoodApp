@@ -53,7 +53,7 @@ public class ClientDao implements IClient {
                         editor.putString("KEY_TOKEN","Bearer "+ token.getToken());
                         editor.commit();
 
-                        context.startActivity(new Intent(context, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY));
+                        context.startActivity(new Intent(context, MainActivity.class));
                     }
                     @Override
 
@@ -135,6 +135,7 @@ public class ClientDao implements IClient {
                         editor = sharedPref.edit();
                         editor.putString("KEY_PHONE", phone);
                         editor.putString("KEY_TOKEN","Bearer "+ token.getToken());
+                        editor.putString("KEY_NAME",token.getName());
                         editor.commit();
 
                         context.startActivity(new Intent(context, MainActivity.class));

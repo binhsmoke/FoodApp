@@ -2,13 +2,12 @@ package com.example.baemin.Model;
 
 public class Cart {
     private int idFood, quantity, price;
-    private String image, name;
+    private String name;
 
-    public Cart(int idFood, int quantity, int price, String image, String name) {
+    public Cart(int idFood, int quantity, int price, String name) {
         this.idFood = idFood;
         this.quantity = quantity;
         this.price = price;
-        this.image = image;
         this.name = name;
     }
 
@@ -34,14 +33,6 @@ public class Cart {
 
     public void setPrice(int price) {
         this.price = price;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
     }
 
     public String getName() {

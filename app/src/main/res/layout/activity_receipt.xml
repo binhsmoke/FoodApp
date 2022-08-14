@@ -35,6 +35,7 @@
             android:text="Trang thanh toán"
             android:textColor="@color/black"
             android:textSize="16sp"
+
             android:textStyle="bold" />
 
         <Space
@@ -208,14 +209,6 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/receipt_voucher_rv"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.5"
-            android:text="VOUNCHER NE"
-            android:textColor="@color/black"
-            android:layout_margin="10dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -252,10 +245,13 @@
                 android:layout_weight=".6"
                 android:gravity="center"
                 android:id="@+id/btnCharge"
-                android:text="Đặt hàng"
-                android:textAlignment="center"
-                android:textColor="@color/white"
+
                 android:background="@drawable/focus_button"
+
+                android:textAlignment="center"
+                android:text="Đặt hàng"
+                android:textColor="@color/white"
+
                 android:layout_marginLeft="16dp"
                 android:textSize="16sp" />
 

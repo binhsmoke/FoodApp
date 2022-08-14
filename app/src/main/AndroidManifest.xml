@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.baemin">
+    package="com.example.baemin" >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -12,13 +12,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Baemin">
-        <activity
-            android:name=".Client_Info_ChangePWD_Activity"
-            android:exported="false" />
-        <activity
-            android:name=".ReceiptAndDetailActivity"
-            android:exported="false" />
+        android:theme="@style/Theme.Baemin" >
+
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -44,8 +39,15 @@
         <activity
             android:name=".Activity.Client_Info_Activity"
             android:exported="false" />
+
         <activity
             android:name=".Activity.Client_Transaction_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Client_Info_ChangePWD_Activity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.ReceiptAndDetailActivity"
             android:exported="false" />
         <activity
             android:name=".Activity.IfAccountExistActivity"
@@ -57,6 +59,9 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".Activity.FoodActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activity.FoodForResultActivity"
             android:exported="true" />
         <activity
             android:name=".Activity.CartActivity"
@@ -73,7 +78,7 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".Activity.StartActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -85,10 +90,10 @@
             android:exported="true" />
 
         <service android:name=".Services.FetchAddressIntent" />
-
         <activity
             android:name=".Activity.ReceiptActivity"
             android:exported="true" />
+
     </application>
 
 </manifest>

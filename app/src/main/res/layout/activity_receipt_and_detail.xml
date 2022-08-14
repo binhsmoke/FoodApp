@@ -51,121 +51,45 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
             android:layout_marginTop="4dp"
             android:orientation="horizontal">
 
             <androidx.core.widget.NestedScrollView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight=".9"
-                android:padding="12dp">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
                 <TextView
+                    android:id="@+id/tvIdReceiptHistory"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/baemin"
                     android:gravity="center"
-                    android:text="Good Chicken - Gà rán Hàn Quốc - Phan Văn Trị"
+                    android:layout_gravity="center"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
             </androidx.core.widget.NestedScrollView>
 
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight=".1"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_baseline_navigate_next_24"
-                android:textAlignment="viewEnd"
-                android:textColor="@color/lightcyan" />
         </LinearLayout>
 
         <TextView
+            android:id="@+id/tvDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="19, Jun 2022 19:29"
             android:textAlignment="center"
             android:textSize="12dp" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcvDetail"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_margin="12dp"
         android:layout_weight="3" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginHorizontal="12dp"
-        android:layout_weight="0.5"
-        android:background="@color/white"
-        android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".1"
-            android:text="Tạm tính"
-            android:textColor="@color/black"
-            android:textSize="12sp" />
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".1"
-            android:text="3 món"
-            android:textColor="@color/black"
-            android:textSize="12sp" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".2"
-            android:text="150.000đ"
-            android:textAlignment="viewEnd"
-            android:textColor="@color/black"
-            android:textSize="12sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginHorizontal="12dp"
-        android:layout_weight="0.5"
-        android:background="@color/white"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".1"
-            android:text="Phí áp dụng"
-            android:textColor="@color/black"
-            android:textSize="12sp" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".1"
-            android:text="1.3km"
-            android:textColor="@color/black"
-            android:textSize="12sp" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".2"
-            android:text="20.000đ"
-            android:textAlignment="viewEnd"
-            android:textColor="@color/black"
-            android:textSize="12sp"
-            android:textStyle="bold" />
-    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -185,40 +109,17 @@
 
 
         <TextView
+            android:id="@+id/tvTotalDetail"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".2"
-            android:text="20.000đ"
             android:textAlignment="viewEnd"
             android:textColor="@color/black"
             android:textSize="14sp"
             android:textStyle="bold" />
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginHorizontal="12dp"
-        android:layout_marginTop="12dp"
-        android:layout_weight="0.5"
-        android:background="@color/white"
-        android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".1"
-            android:text="Mã đơn hàng"
-            android:textSize="12sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".2"
-            android:text="AAA111 "
-            android:textSize="12sp" />
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -237,10 +138,10 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/tvNameClient"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".2"
-            android:text="nguyễn văn a"
             android:textSize="12sp" />
     </LinearLayout>
 
@@ -261,49 +162,40 @@
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/tvPhoneDetail"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".2"
-            android:text="090 90909090"
             android:textSize="12sp" />
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="12dp"
-        android:layout_weight="0.5"
         android:background="@color/white"
         android:orientation="horizontal">
 
         <TextView
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight=".1"
             android:text="Địa chỉ"
             android:textSize="12sp"
             android:textStyle="bold" />
 
         <TextView
+            android:id="@+id/tvAddressDetail"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight=".2"
-            android:text="aaaaaaaaaaaaaaaa"
             android:textSize="12sp" />
     </LinearLayout>
-
-    <TextView
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight=".8"
-        android:text="Đặt lại"
-        android:layout_margin="12dp"
-        android:background="@drawable/focus_button"
-        android:gravity="center"
-        android:textStyle="bold"
-        android:textSize="22sp"
-        android:textColor="@color/white"/>
-
+        android:layout_weight="2.5"
+        />
 
 
 </LinearLayout>

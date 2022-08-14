@@ -6,19 +6,15 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.example.baemin.Interfaces.IReceipt;
-import com.example.baemin.Model.Food;
 import com.example.baemin.Model.Message;
 import com.example.baemin.Model.Receipt;
 import com.example.baemin.Model.ReceiptAndDetail;
-import com.example.baemin.Model.ReceiptDetail;
 import com.example.baemin.Services.ServiceAPI;
 import com.google.gson.Gson;
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -62,6 +58,39 @@ public class ReceiptDao implements IReceipt {
                     @Override
                     public void onNext( Message msg) {
                         Toast.makeText(context,"Đặt hàng thành công!",Toast.LENGTH_SHORT).show();
+                    }
+                    @Override
+
+                    public void onError(Throwable e) {
+                        e.printStackTrace();
+                        Log.e("AAA","LOI NE");
+                        if(e instanceof java.net.UnknownHostException){
+                            Toast.makeText(context,"Không có kết nối",Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                    @Override
+                    public void onComplete() {}
+                });
+    }
+
+    @Override
+    public void Read(Context context, String token, String phone) {
+        requestInterface.GetReceipt(token,phone)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .unsubscribeOn(Schedulers.io())
+                .subscribe(new Observer<ArrayList<Receipt>>() {
+                    @Override
+                    public void onSubscribe( Disposable d) {
+
+                    }
+                    @Override
+                    public void onNext( ArrayList<Receipt> alReceipt) {
+                        String jsAlReceipt = new Gson().toJson(alReceipt);
+                        SharedPreferences sharedPreferences = context.getSharedPreferences("Receipt",Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor=sharedPreferences.edit();
+                        editor.putString("KEY_RECEIPT",jsAlReceipt);
+                        editor.apply();
                     }
                     @Override
 
