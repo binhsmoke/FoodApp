@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-
+        <entry key="..\:/Subjects/FoodApp/app/src/main/res/layout/activity_client_info.xml" value="0.25" />
+        <entry key="..\:/Subjects/FoodApp/app/src/main/res/layout/activity_detail.xml" value="0.1" />
+        <entry key="..\:/Subjects/FoodApp/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Subjects/FoodApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/luan/Documents/GitHub/FoodApp/app/src/main/res/drawable/focus_button.xml" value="0.1765" />
         <entry key="..\:/Users/luan/Documents/GitHub/FoodApp/app/src/main/res/drawable/shape_focus_button.xml" value="0.1765" />
         <entry key="..\:/Users/luan/Documents/GitHub/FoodApp/app/src/main/res/layout/activity_address_for_result.xml" value="0.245018115942029" />
@@ -30,7 +33,6 @@
         <entry key="..\:/Users/luan/Documents/GitHub/FoodApp/app/src/main/res/layout/item_receipt.xml" value="0.25" />
         <entry key="..\:/Users/luan/Documents/GitHub/FoodApp/app/src/main/res/layout/layout_alert_reorder_dialog.xml" value="0.16799999999999998" />
         <entry key="..\:/Users/luan/Documents/GitHub/FoodApp/app/src/main/res/layout/shape_dialog.xml" value="0.10989583333333333" />
-
       </map>
     </option>
   </component>

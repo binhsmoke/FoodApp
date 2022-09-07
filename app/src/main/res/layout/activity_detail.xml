@@ -43,16 +43,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"/>
-    </LinearLayout>
-    <ImageView
-        android:id="@+id/detail_pic"
-        android:adjustViewBounds="true"
-        android:scaleType="fitXY"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight=".6"
-        android:background="@color/silver"
-        />
+
 
     </FrameLayout>
     <LinearLayout
